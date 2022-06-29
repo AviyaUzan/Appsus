@@ -1,0 +1,13 @@
+textarea {
+	resize: none;
+}
+
+.add-keep-input {
+	flex-direction: column;
+	width: 40rem;
+	border: 1px solid;
+}
+.add-keep-input > * {
+	border: none;
+	outline: none;
+}
