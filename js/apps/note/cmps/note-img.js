@@ -1,6 +1,10 @@
 export default {
+	props: ['note'],
 	template: `
-    <div>this is and img cmp</div>
+    <article :style="{backgroundColor: note.style.backgroundColor}" class="note">
+		<h3>title: {{note.info.title}}</h3>
+		<img :src="note.info.url" alt="">
+	</article>
 `,
 	data() {
 		return {}

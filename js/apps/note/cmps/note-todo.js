@@ -1,4 +1,5 @@
 export default {
+	props: ['note'],
 	template: `
  <div>this is a todo cmp</div>
 `,
@@ -8,5 +9,8 @@ export default {
 	created() {},
 	methods: {},
 	computed: {},
-	unmounted() {}
+	unmounted() {},
+	created() {
+		console.log('todo', this.note)
+	}
 }
