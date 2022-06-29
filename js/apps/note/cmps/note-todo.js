@@ -19,6 +19,6 @@ export default {
 	computed: {},
 	unmounted() {},
 	created() {
-		console.log('todo', this.note)
+
 	}
 }
