@@ -8,9 +8,14 @@
 @import 'basic/helpers.css';
 
 /* APPS */
-
+/* email */
 @import 'apps/email/email-preview.css';
-@import 'apps/keep/note-preview.css';
+
+/* note */
+@import 'apps/note/note-preview.css';
+
+/* book */
+@import 'apps/book/book-preview.css';
 
 /* COMPONENTS */
 @import 'cmps/header.css';
