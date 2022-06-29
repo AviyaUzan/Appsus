@@ -1,4 +1,4 @@
-// import mailPreview from '../cmps/mail-preview.cmp'
+import mailPreview from '../cmps/mail-preview.cmp.js'
 
 export default {
 	props: ["mails"],
@@ -7,7 +7,7 @@ export default {
 	<section class="mail-list-container">
 		<ul class="mail-list">
 			<li v-for="(mail,idx) in mails" :key="mail.id" class="mail-">
-				<!-- <mail-preview/> -->
+				<mail-preview :mail="mail"/>
 				<div class="mail-actions">
 					<input type="checkbox" name="" id="">
 					<button>⭐</button>
@@ -17,9 +17,10 @@ export default {
 	</section>
   `,
 	components: {
-		// mailPreview
+		mailPreview
 	},
-  
+	created(){
+	},
 	data() {
 	  return {};
 	},

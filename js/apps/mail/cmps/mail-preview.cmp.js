@@ -1,15 +1,18 @@
 export default {
-	// props: ["mails"],
-	template: `
-	<h1>hello world</h1>
+    props: ['mail'],
+    template: `
+	<section class="mail-preview-container">
+		<img class="mail-img" :src="mail.img">
+		<p>{{mail.name}}</p>
+		<p>{{mail.subject}}</p>
+	</section>
   `,
-	components: {
-	},
-  
-	data() {
-	  return {};
-	},
-	methods: {
-	},
-	computed: {},
-  };
+    components: {},
+    created() {
+    },
+    data() {
+        return {};
+    },
+    methods: {},
+    computed: {},
+};
