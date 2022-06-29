@@ -1,13 +1,12 @@
 export default {
-    template:`
+	template: `
     <footer class="app-footer">
        <p>&copy; Aviya Uzan 2022</p>
     </footer>
    `,
-     data() {
-       return {
-       }
-     },
-     methods:{},
-   computed:{}
-   } 
+	data() {
+		return {}
+	},
+	methods: {},
+	computed: {}
+}
