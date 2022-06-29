@@ -1,9 +1,9 @@
 // import { storageService } from '../../../services/async-storage-service.js';
 
-const MAILS_KEY = 'mails';
+const MAILS_KEY = 'emails';
 
-export const mailService = {
-    getMails
+export const emailService = {
+    getEmails
     // query,
 };
 
@@ -11,9 +11,9 @@ export const mailService = {
 //     return storageService.query(MAILS_KEY);
 // }
 
-console.log('getMails()',getMails())
+console.log('getEmails()',getEmails())
 
-function getMails() {
+function getEmails() {
     return [
         {
             name: 'aviya uzan',

@@ -10,7 +10,7 @@
 /* APPS */
 /* email */
 @import 'apps/email/email-preview.css';
-/* @import 'apps/email/email-list.css'; */
+@import 'apps/email/email-list.css';
 
 /* note */
 @import 'apps/note/note-preview.css';
