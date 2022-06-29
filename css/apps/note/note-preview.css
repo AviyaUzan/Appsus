@@ -1,0 +1,18 @@
+.note-preview-container {
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 10px;
+}
+
+.note {
+	width: 240px;
+	min-height: 200px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	color: white;
+	border: 1px solid #e0e0e0;
+}
+.note img {
+	object-fit: cover;
+	width: 230px;
+}

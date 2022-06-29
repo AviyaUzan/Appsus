@@ -1,7 +1,7 @@
 export default {
 	props: ['note'],
 	template: `
-    <article :style="{backgroundColor: note.style.backgroundColor}" class="note">
+    <article :style="{backgroundColor: note.style.backgroundColor}" class="flex note">
 		<h3>title: {{note.info.title}}</h3>
 		<img :src="note.info.url" alt="">
 	</article>
@@ -9,7 +9,9 @@ export default {
 	data() {
 		return {}
 	},
-	created() {},
+	created() {
+		console.log('img', this.note)
+	},
 	methods: {},
 	computed: {},
 	unmounted() {}
