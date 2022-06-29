@@ -36,7 +36,6 @@ export default {
 		},
 		addNote(note) {
 			this.$emit('addNote', note)
-			// this.$router.go()
 		}
 	}
 }

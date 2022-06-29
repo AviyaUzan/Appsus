@@ -21,6 +21,7 @@ function addNote(note) {
 		}
 	}
 	notes.push(newNote)
+	console.log(notes)
 }
 
 var notes = [

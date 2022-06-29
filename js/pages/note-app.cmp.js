@@ -24,7 +24,8 @@ export default {
 	methods: {
 		addNote(note) {
 			noteService.addNote(note)
-			// this.$router.go()
+			console.log('note', note)
+			this.$forceUpdate()
 		}
 	}
 }
