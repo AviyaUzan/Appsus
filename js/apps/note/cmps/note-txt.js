@@ -14,7 +14,5 @@ export default {
 	methods: {},
 	computed: {},
 	unmounted() {},
-	created() {
-		console.log('txt', this.note)
-	}
+	created() {}
 }

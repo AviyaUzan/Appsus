@@ -20,7 +20,7 @@ export default {
 			this.$emit('addNote', {
 				title: this.title,
 				txt: this.txt,
-				type: note - txt
+				type: 'note-txt'
 			})
 		}
 	},

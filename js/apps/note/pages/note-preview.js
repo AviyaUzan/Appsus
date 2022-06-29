@@ -26,6 +26,7 @@ export default {
 	},
 	created() {
 		this.notes = noteService.getNotes()
+
 	},
 	methods: {},
 	computed: {},

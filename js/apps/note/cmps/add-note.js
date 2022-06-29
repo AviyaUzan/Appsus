@@ -3,6 +3,7 @@ import addTodo from './add-todo-form.js'
 import addImg from './add-img-form.js'
 import addVid from './add-vid-form.js'
 import addAudio from './add-audio-form.js'
+import { noteService } from '../services/note-service.js'
 
 export default {
 	template: `
@@ -33,8 +34,8 @@ export default {
 		onChangeInput({ target: { value } }) {
 			this.formType = 'add-' + value
 		},
-		addNote(val) {
-			console.log(val)
+		addNote(note) {
+			this.$emit('addNote', note)
 		}
 	}
 }

@@ -1,9 +1,27 @@
+import { storageService } from '../../../services/async-storage-service.js'
+
 export const noteService = {
-	getNotes
+	getNotes,
+	addNote
 }
 
 function getNotes() {
 	return notes
+}
+
+function addNote(note) {
+	const newNote = {
+		id: storageService.makeId(),
+		type: note.type,
+		info: {
+			txt: note.txt
+		},
+		style: {
+			backgroundColor: 'red'
+		}
+	}
+	notes.push(newNote)
+	console.log(notes)
 }
 
 var notes = [
@@ -41,6 +59,16 @@ var notes = [
 		},
 		style: {
 			backgroundColor: '#00d'
+		}
+	},
+	{
+		id: 'rmqj5COD',
+		type: 'note-txt',
+		info: {
+			txt: 'nulasdasdsal'
+		},
+		style: {
+			backgroundColor: 'red'
 		}
 	}
 ]

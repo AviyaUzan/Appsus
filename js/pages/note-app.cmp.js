@@ -1,5 +1,6 @@
 import addNote from '../apps/note/cmps/add-note.js'
 import notePreview from '../apps/note/pages/note-preview.js'
+import { noteService } from '../apps/note/services/note-service.js'
 
 export default {
 	template: `
@@ -10,7 +11,7 @@ export default {
             <input type="search"  id="search-keep">
 		</label>
 		
-		<add-note/>
+		<add-note @add-note="addNote"/>
 		<note-preview/>
 
 		</section>
@@ -19,5 +20,12 @@ export default {
 	components: {
 		addNote,
 		notePreview
+	},
+	methods: {
+		addNote(note) {
+			noteService.addNote(note)
+			console.log('note', note)
+			this.$forceUpdate()
+		}
 	}
 }
