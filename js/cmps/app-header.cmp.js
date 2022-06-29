@@ -1,7 +1,7 @@
 export default {
  template:`
  <header class="app-header">
-    hello
+    HEADER
  </header>
 `,
   data() {
