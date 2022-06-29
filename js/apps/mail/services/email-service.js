@@ -1,7 +1,7 @@
 import { storageService } from '../../../services/async-storage-service.js';
+import { utilService } from '../../../services/util-service.js';
 
 const MAILS_KEY = 'emails';
-
 _creatEmails()
 
 export const emailService = {
@@ -21,10 +21,11 @@ function query() {
 console.log('getEmails()',getEmails())
 
 function _creatEmails() {
-    let emails = getEmails()
+    // let emails = emailService.query().then(mails => this.mails = mails) 
+    let emails = utilService.loadFromStorage(MAILS_KEY)
     if (!emails || !emails.length) {
         emails = getEmails()
-        storageService._save(MAILS_KEY, books)
+        utilService.saveToStorage(MAILS_KEY)
     }
     return emails;
 }
