@@ -8,7 +8,7 @@ export default {
         		<input type="text" placeholder="Search email">
                 <div class="email-content">
                     <email-side-nav @filter="filterByEmailState"/>
-                    <email-list class="email-app-list":emails="emailsToShow"/>
+                    <email-list class="email-app-list" :emails="emailsToShow"/>
                 </div>
     </section>
 `,
