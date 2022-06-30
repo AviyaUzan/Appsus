@@ -25,8 +25,8 @@ export default {
 		}
 	},
 	created() {
-		this.notes = noteService.getNotes()
-
+		// console.log(noteService.query())
+		noteService.query().then(notes => (this.notes = notes))
 	},
 	methods: {},
 	computed: {},

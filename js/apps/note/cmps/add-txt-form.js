@@ -2,7 +2,6 @@ export default {
 	template: `
 			<form @submit.prevent="onAddTxt" class="add-keep-input flex">
 				<input v-model="title" type="text" placeholder="title" />
-				<!-- add this later -->
         		<textarea  v-model="txt" placeholder="text" rows = "3" cols = "60" name = "description"></textarea>
 				<button type="submit">submit</button>
 			</form>

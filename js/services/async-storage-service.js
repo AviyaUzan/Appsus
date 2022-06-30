@@ -23,6 +23,7 @@ function get(entityType, entityId) {
 
 //create new item
 function post(entityType, newEntity) {
+	console.log('posted')
 	newEntity.id = makeId()
 	return query(entityType).then(entities => {
 		entities.push(newEntity)
