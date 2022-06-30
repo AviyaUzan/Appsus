@@ -5,7 +5,8 @@ export const storageService = {
 	put,
 	remove,
 	postMany,
-	makeId
+	makeId,
+	getIdx
 }
 
 // gets all the items
@@ -20,12 +21,18 @@ function get(entityType, entityId) {
 		entities.find(entity => entity.id === entityId)
 	)
 }
+//get an item by id
+function getIdx(entityType, entityId) {
+	return query(entityType).then(entities =>
+		entities.findIndex(entity => entity.id === entityId)
+	)
+}
 
 //create new item
 function post(entityType, newEntity) {
 	newEntity.id = makeId()
 	return query(entityType).then(entities => {
-		entities.push(newEntity)
+		entities.unshift(newEntity)
 		_save(entityType, entities)
 		return newEntity
 	})

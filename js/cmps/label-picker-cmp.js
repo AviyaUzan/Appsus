@@ -1,7 +1,7 @@
-import { bookService } from '../services/book-service.js';
+import { bookService } from '../services/book-service.js'
 
 export default {
-    template:`
+	template: `
         <section>
             <input v-model="value" @change="onSetSearch" type="text" placeholder="Search a book">
             <div v-if="books">
@@ -12,23 +12,22 @@ export default {
             </div>
         </section>
    `,
-     data() {
-       return {
-            value: null,
-            books: null,
-       }
-     },
-     methods:{
-        onSetSearch() {
-        bookService.askSearchResults(this.value)
-        .then( res => {
-          this.books = res
-          console.log('res',res)
-        })
-        },
-        onAddGoogleBook(book) {
-          bookService.addGoogleBook({...book})
-        }
-      },
-      computed:{}
-    }
+	data() {
+		return {
+			value: null,
+			books: null
+		}
+	},
+	methods: {
+		onSetSearch() {
+			bookService.askSearchResults(this.value).then(res => {
+				this.books = res
+				console.log('res', res)
+			})
+		},
+		onAddGoogleBook(book) {
+			bookService.addGoogleBook({ ...book })
+		}
+	},
+	computed: {}
+}
