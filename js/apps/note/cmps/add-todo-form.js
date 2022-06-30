@@ -32,7 +32,6 @@ export default {
 	},
 	computed: {
 		getColors() {
-			console.log(this.colors)
 			return {
 				color: this.colors.txt,
 				'background-color': this.colors.bg

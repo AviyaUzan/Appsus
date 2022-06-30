@@ -12,7 +12,7 @@ export default {
 		</label>
 		
 		<add-note @add-note="addNote"/>
-		<note-preview/>
+		<note-preview @pin="pinNote" @remove="removeNote" :notes="notes"/>
 
 		</section>
 
@@ -21,11 +21,28 @@ export default {
 		addNote,
 		notePreview
 	},
+	data() {
+		return {
+			notes: null
+		}
+	},
+	created() {
+		noteService.query().then(notes => (this.notes = notes))
+	},
 	methods: {
 		addNote(note) {
-			noteService.addNote(note)
-			console.log('note', note)
-			this.$forceUpdate()
+			noteService.addNote(note).then(() => {
+				this.notes.unshift(note)
+			})
+		},
+		removeNote(id) {
+			noteService.removeNote(id).then(() => {
+				const idx = this.notes.findIndex(note => note.id === id)
+				this.notes.splice(idx, 1)
+			})
+		},
+		pinNote(id) {
+			noteService.pinNote(id).then(notes => (this.notes = notes))
 		}
 	}
 }

@@ -42,9 +42,8 @@ export default {
 			this.formType = 'add-' + value
 		},
 		addNote(note) {
-			console.log('note', note)
-			noteService.addNote(note)
-			this.$router.go()
+			this.$emit('addNote', note)
+			// noteService.addNote(note)
 		}
 	}
 }

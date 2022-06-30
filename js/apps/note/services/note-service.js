@@ -5,7 +5,9 @@ const NOTES_KEY = 'notes'
 export const noteService = {
 	addNote,
 	query,
-	save
+	save,
+	removeNote,
+	pinNote
 }
 
 function query() {
@@ -33,7 +35,7 @@ function save(note) {
 }
 
 function addNote(note) {
-	let newNote = {
+	const newNote = {
 		id: storageService.makeId(),
 		type: note.type,
 		info: note.info,
@@ -42,7 +44,23 @@ function addNote(note) {
 			...note.style
 		}
 	}
-	storageService.post(NOTES_KEY, newNote)
+	return storageService.post(NOTES_KEY, newNote)
+}
+
+function removeNote(id) {
+	return storageService.remove(NOTES_KEY, id)
+}
+
+function pinNote(id) {
+	return storageService.query(NOTES_KEY).then(notes => {
+		const noteIdx = notes.findIndex(note => note.id === id)
+		console.log(noteIdx)
+		const pinnedNote = notes.splice(noteIdx, 1)
+		console.log(...pinnedNote)
+		notes.unshift(...pinnedNote)
+		console.log(notes)
+		return notes
+	})
 }
 
 function getNotes() {

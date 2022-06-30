@@ -5,7 +5,6 @@ export default {
 		<h3>{{note.title}}</h3>
 		<iframe width="210" height="157.5" :src="getIframeSrc" 
 			frameborder="0" allowfullscreen></iframe>
-		</iframe>
 	</article>
 `,
 	computed: {
@@ -16,9 +15,8 @@ export default {
 			}
 		},
 		getIframeSrc() {
-			console.log('hi')
-			let src = `//www.youtube.com/embed/${this.note.info}`
-			console.log(src)
+			const src = `//www.youtube-nocookie.com/embed/${this.note.info}`
+			// no cookie prevents error
 			return src
 		}
 	}
