@@ -8,13 +8,13 @@ export default {
             <div v-if="isNewEmailShow" class="new-email">
                 <div class="new-email-header">
                 <p>New Message</p>
-                <button class="close-new-email email-action">x</button>
+                <button @click="isNewEmailShow = !isNewEmailShow" class="close-new-email email-action">x</button>
             </div>
                 <input class="new-email-to" type="email" pattern=".+@globex\.com" required placeholder="To">
                 <input class="new-email-title" type="text" placeholder="Subject">
                 <textarea class="new-email-text" name="" id="" rows="10"></textarea>
                 <div class="new-email-btns">
-                    <button ><img src="assest/icons/send.svg" alt=""></button>
+                    <button class="send email-action" ><img src="assest/icons/send.svg" alt=""></button>
                     <button class="email-action" ><img src="assest/icons/delete.svg" alt=""></button>
                 </div>
             </div>
@@ -33,7 +33,7 @@ export default {
 	created() {},
 	data() {
 		return {
-			isNewEmailShow: true
+			isNewEmailShow: false
 		}
 	},
 	methods: {
