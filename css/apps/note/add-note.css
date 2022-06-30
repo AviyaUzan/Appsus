@@ -1,13 +1,39 @@
-textarea {
-	resize: none;
-}
-
-.add-keep-input {
+.add-note-input {
 	flex-direction: column;
 	width: 40rem;
 	border: 1px solid;
+	box-shadow: 0 1px 2px 0 #3c40434d, 0 2px 6px 2px #3c404326;
+	border-radius: 0.5rem;
+	border: none;
+	padding: 5px;
 }
-.add-keep-input > * {
+.add-note-input > * {
+	box-sizing: border-box;
+	color: #202124;
+	font-family: 'Roboto-Regular', monospace;
+	font-size: 1rem;
+	line-height: 1.3rem;
+	width: 100%;
+}
+.add-note-input input {
+	/* font-size: 1.1rem; */
+	padding: 0 8px;
+	border-bottom: 1px solid #e6e6e6;
+	margin-bottom: 0.5rem;
+}
+.add-note-input textarea {
+	resize: none;
+	padding: 4px 10px;
+}
+
+.add-note-input > * {
 	border: none;
 	outline: none;
+}
+
+.add-note-btn-container {
+	margin-bottom: 3rem;
+}
+.add-note-btn-container img {
+	width: 24px;
 }

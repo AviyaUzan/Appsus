@@ -13,9 +13,9 @@
 @import 'apps/email/email-list.css';
 
 /* note */
+@import 'apps/note/note-app.css';
 @import 'apps/note/note-preview.css';
 @import 'apps/note/add-note.css';
-
 
 /* book */
 /* @import 'apps/book/book-preview.css'; */

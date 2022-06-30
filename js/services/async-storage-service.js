@@ -6,7 +6,8 @@ export const storageService = {
 	remove,
 	postMany,
 	makeId,
-	getIdx
+	getIdx,
+	putFirst
 }
 
 // gets all the items
@@ -54,6 +55,17 @@ function put(entityType, updatedEntity) {
 		entities.splice(idx, 1, updatedEntity)
 		_save(entityType, entities)
 		return updatedEntity
+	})
+}
+
+function putFirst(entityType, updatedEntity) {
+	return query(entityType).then(entities => {
+		const idx = entities.findIndex(entity => entity.id === updatedEntity.id)
+		entities.splice(idx, 1)
+		entities.unshift(updatedEntity)
+		console.log(entities)
+		_save(entityType, entities)
+		return entities
 	})
 }
 //remove an item
