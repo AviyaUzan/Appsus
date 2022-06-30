@@ -18,6 +18,10 @@ h5 {
 	margin: 0;
 }
 
-.btn {
+img {
+	width: 100%;
+}
+
+button {
 	cursor: pointer;
 }

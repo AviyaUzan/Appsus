@@ -1,0 +1,29 @@
+.email-side-nav{
+    width: 10%;
+    flex-direction: column;
+    margin-left: 2%;
+    /* background-color: rgb(221, 147, 51); */
+   gap: 3%;
+}
+
+.btn-side-nave:not(:first-child){
+    margin-left: 3%;
+}
+
+.btn-side-nave {
+    width: 80%;
+    text-align: start;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+}
+
+.compose {
+    width: 100%;
+    padding: 0;
+}
+
+.compose-img{
+    text-align: start;
+    min-width: 5em;
+    cursor: pointer;
+}

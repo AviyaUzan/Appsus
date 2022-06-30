@@ -4,11 +4,12 @@ import emailSideNav from '../apps/mail/cmps/email-side-nav.cmp.js'
 
 export default {
 	template: `
-    <section>
-        <h1>mails :)</h1>
+    <section class="email-app">
         		<input type="text" placeholder="Search email">
-                <email-side-nav @filter="filterByEmailState"/>
-                <email-list :emails="emailsToShow"/>
+                <div class="email-content">
+                    <email-side-nav @filter="filterByEmailState"/>
+                    <email-list class="email-app-list":emails="emailsToShow"/>
+                </div>
     </section>
 `,
     components: {
