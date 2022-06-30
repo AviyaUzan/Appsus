@@ -1,12 +1,35 @@
 import { storageService } from '../../../services/async-storage-service.js'
 
+const NOTES_KEY = 'notes'
+
 export const noteService = {
-	getNotes,
-	addNote
+	addNote,
+	query,
+	save
 }
 
-function getNotes() {
-	return notes
+function query() {
+	let notes = storageService.query(NOTES_KEY)
+	return notes.then(notes => {
+		if (!notes || notes.length === 0) {
+			notes = getNotes()
+			storageService.postMany(NOTES_KEY, notes)
+		}
+		return notes
+	})
+}
+function get(noteId) {
+	return storageService.get(NOTES_KEY, noteId)
+}
+
+function remove(noteId) {
+	return storageService.remove(NOTES_KEY, noteId)
+}
+
+function save(note) {
+	if (note.id) {
+		return storageService.put(NOTES_KEY, note)
+	} else return storageService.post(NOTES_KEY, note)
 }
 
 function addNote(note) {
@@ -20,8 +43,11 @@ function addNote(note) {
 			backgroundColor: 'red'
 		}
 	}
-	notes.push(newNote)
-	console.log(notes)
+	storageService.post(NOTES_KEY, newNote)
+}
+
+function getNotes() {
+	return notes
 }
 
 var notes = [
