@@ -3,11 +3,12 @@ export default {
     template: `
 	<section>
         <h1>MADDYYY</h1>
-            <button @click="filterBy('inbox')">inbox</button>
-            <button @click="filterBy('starred')">starred</button>
-            <button @click="filterBy('sent')">sent</button>
-            <button @click="filterBy('trash')">trash</button>
-            <button @click="filterBy('drafts')">drafts</button>
+            <button class="btn" @click="filterBy('all')">All</button>
+            <button class="btn" @click="filterBy('inbox')">inbox</button>
+            <button class="btn" @click="filterBy('starred')">starred</button>
+            <button class="btn" @click="filterBy('sent')">sent</button>
+            <button class="btn" @click="filterBy('trash')">trash</button>
+            <button class="btn" @click="filterBy('drafts')">drafts</button>
             <!-- connect notes -->
 	</section>
   `,
@@ -19,7 +20,7 @@ export default {
     },
     methods: {
         filterBy(input){
-            this.$emit("filtered", input);
+            this.$emit("filter", input)
           },
     },
     computed: {},
