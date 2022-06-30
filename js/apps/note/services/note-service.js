@@ -10,7 +10,7 @@ function getNotes() {
 }
 
 function addNote(note) {
-	const newNote = {
+	let newNote = {
 		id: storageService.makeId(),
 		type: note.type,
 		info: {

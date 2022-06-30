@@ -14,10 +14,6 @@ function query() {
     return storageService.query(MAILS_KEY)
   }
 
-// function query() {
-//     return storageService.query(MAILS_KEY);
-// }
-
 console.log('getEmails()',getEmails())
 
 function _creatEmails() {
@@ -25,7 +21,7 @@ function _creatEmails() {
     let emails = utilService.loadFromStorage(MAILS_KEY)
     if (!emails || !emails.length) {
         emails = getEmails()
-        utilService.saveToStorage(MAILS_KEY)
+        utilService.saveToStorage(MAILS_KEY, emails)
     }
     return emails;
 }
