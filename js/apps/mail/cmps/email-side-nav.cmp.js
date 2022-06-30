@@ -1,8 +1,7 @@
 export default {
     props: ['emails'],
     template: `
-	<section>
-        <h1>MADDYYY</h1>
+	<section class="email-side-nav flex">
             <button class="btn" @click="filterBy('all')">All</button>
             <button class="btn" @click="filterBy('inbox')">inbox</button>
             <button class="btn" @click="filterBy('starred')">starred</button>

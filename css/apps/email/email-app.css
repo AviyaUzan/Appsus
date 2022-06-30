@@ -1,0 +1,12 @@
+.email-app{
+display: flex;
+flex-direction: column;
+}
+
+.email-content{
+    display: flex;
+}
+
+.email-app-list{
+    flex-grow: 1;
+}

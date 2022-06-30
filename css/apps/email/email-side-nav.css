@@ -1,0 +1,5 @@
+.email-side-nav{
+    flex-direction: column;
+    background-color: rgb(221, 147, 51);
+    justify-content: space-between;
+}

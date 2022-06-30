@@ -2,21 +2,26 @@
     background-color: rgb(175, 170, 170);
 }
 
-/* .mail-list-container {
-    display: table;
-} */
+.email-list {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    background-color: aqua;
+}
 
 .star-icon {
     height: 20px;
 }
 
-.starred-email{
+.email-action{
     appearance: none;
-    border: 0;
-    background-color: none;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
 }
 
-.table {
+/* .table {
     display: table;
     width: 100%;
 }
@@ -26,7 +31,5 @@
 }
 
 .table .row .td{
-    border: 1px solid rgb(126, 116, 116);
-        border-collapse: collapse;
     display: table-cell;
-}
+} */

@@ -1,13 +1,22 @@
 .mail-img {
     height: 40px;
-    border-radius: 30%;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position:50% 50%;
 }
 
 
 .mail-preview-container{
-    /* justify-content: space-between; */
+    display: grid;
+    grid-row: 1;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    
+    /* justify-content: space-between;
     gap: 30px;
-    width: 700px;
+    width: 1200px; */
 }
 
 .row {
@@ -15,7 +24,7 @@
 }
 
 .td{
-    border: 1px solid rgb(126, 116, 116);
-        border-collapse: collapse;
+    /* border: 1px solid rgb(126, 116, 116);
+        border-collapse: collapse; */
     display: table-cell;
 }
