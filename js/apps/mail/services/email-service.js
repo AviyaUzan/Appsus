@@ -14,10 +14,6 @@ function query() {
     return storageService.query(MAILS_KEY)
   }
 
-// function query() {
-//     return storageService.query(MAILS_KEY);
-// }
-
 console.log('getEmails()',getEmails())
 
 function _creatEmails() {
@@ -25,7 +21,7 @@ function _creatEmails() {
     let emails = utilService.loadFromStorage(MAILS_KEY)
     if (!emails || !emails.length) {
         emails = getEmails()
-        utilService.saveToStorage(MAILS_KEY)
+        utilService.saveToStorage(MAILS_KEY, emails)
     }
     return emails;
 }
@@ -41,7 +37,8 @@ function getEmails() {
             sentAt: 1551133930594,
             to: 'momo@momo.com',
             isStarred: false,
-            img: "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=2000"
+            img: "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=2000",
+            state: 'trash',
         },
         {
             name: 'maddy pollak',
@@ -52,7 +49,44 @@ function getEmails() {
             sentAt: 155114440594,
             to: 'momo@momo.com',
             isStarred: false,
-            img: "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=2000"
+            img: "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+            state: 'inbox',
+        },
+        {
+            name: 'roni kuchin',
+            id: 'e102',
+            subject: 'YES QUEEN',
+            body: 'lets go party',
+            isRead: false,
+            sentAt: 14440594,
+            to: 'momo@momo.com',
+            isStarred: false,
+            img: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+            state: 'inbox',
+        },
+        {
+            name: 'roni kuchin',
+            id: 'e102',
+            subject: 'YES QUEEN',
+            body: 'lets go party',
+            isRead: false,
+            sentAt: 14440594,
+            to: 'momo@momo.com',
+            isStarred: false,
+            img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXN8ZW58MHx8MHx8&w=1000&q=80",
+            state: 'inbox',
+        },
+        {
+            name: 'roni kuchin',
+            id: 'e102',
+            subject: 'YES QUEEN',
+            body: 'lets go party',
+            isRead: false,
+            sentAt: 14440594,
+            to: 'momo@momo.com',
+            isStarred: false,
+            img: "https://www.taylorherring.com/wp-content/uploads/2015/03/Archetypal-Male-Face-of-Beauty-embargoed-to-00.01hrs-30.03.15.jpg",
+            state: 'inbox',
         },
     ];
 }

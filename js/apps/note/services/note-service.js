@@ -33,7 +33,7 @@ function save(note) {
 }
 
 function addNote(note) {
-	const newNote = {
+	let newNote = {
 		id: storageService.makeId(),
 		type: note.type,
 		info: note.info,

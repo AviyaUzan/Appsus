@@ -7,8 +7,8 @@ export default {
     <section>
         <h1>mails :)</h1>
         		<input type="text" placeholder="Search email">
-                <email-side-nav :emails="emails"/>
-                <email-list :emails="emails"/>
+                <email-side-nav @filter="filterByEmailState"/>
+                <email-list :emails="emailsToShow"/>
     </section>
 `,
     components: {
@@ -17,11 +17,26 @@ export default {
     },
     data() {
         return {
-            emails: null
+            emails: null,
+            filterBy: 'all',
         }
     },
     created(){
         // emailService.query().then(mails => this.mails = mails) 
         this.emails = emailService.getEmails()
     },
+    methods: {
+        filterByEmailState(filterBy){
+            this.filterBy = filterBy
+            console.log('this.filterBy',this.filterBy)
+        }
+    },
+    computed: {
+        emailsToShow() {
+            if(this.filterBy === 'all') return this.emails
+            return this.emails.filter((email) => {
+                return email.state === this.filterBy
+            });
+        }
+    }
 }

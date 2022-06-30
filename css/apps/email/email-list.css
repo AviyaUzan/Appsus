@@ -1,3 +1,32 @@
 .read{
     background-color: rgb(175, 170, 170);
 }
+
+/* .mail-list-container {
+    display: table;
+} */
+
+.star-icon {
+    height: 20px;
+}
+
+.starred-email{
+    appearance: none;
+    border: 0;
+    background-color: none;
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.table .row {
+    display: table-row;
+}
+
+.table .row .td{
+    border: 1px solid rgb(126, 116, 116);
+        border-collapse: collapse;
+    display: table-cell;
+}
