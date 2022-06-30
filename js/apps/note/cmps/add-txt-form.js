@@ -1,9 +1,9 @@
 export default {
 	props: ['colors'],
 	template: `
-			<form @submit.prevent="onAddTxt" class="add-keep-input flex">
-				<input  :style="getColors" v-model="title" type="text" placeholder="title" />
-        		<textarea :style="getColors" v-model="txt" placeholder="text" rows = "3" cols = "60" name = "description"></textarea>
+			<form @submit.prevent="onAddNote" class="add-keep-input flex">
+				<input  :style="getColors" v-model="title" type="text" placeholder="Title" />
+        		<textarea :style="getColors" v-model="info" placeholder="text" rows = "3" cols = "60" name = "description"></textarea>
 				<button type="submit">submit</button>
 			</form>
 		 <!-- make amount of rows dynamic -->
@@ -11,17 +11,14 @@ export default {
 	data() {
 		return {
 			title: null,
-			txt: null
+			info: null
 		}
 	},
-	created() {
-		console.log(this.colors.txt)
-	},
 	methods: {
-		onAddTxt() {
+		onAddNote() {
 			this.$emit('addNote', {
 				title: this.title,
-				txt: this.txt,
+				info: this.info,
 				type: 'note-txt',
 				style: {
 					color: this.colors.txt,
@@ -37,6 +34,5 @@ export default {
 				'background-color': this.colors.bg
 			}
 		}
-	},
-	unmounted() {}
+	}
 }

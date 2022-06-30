@@ -32,8 +32,8 @@ export default {
 		return {
 			formType: 'add-txt',
 			colors: {
-				txt: '#000000',
-				bg: '#ffffff'
+				txt: '#ffffff',
+				bg: '#000000'
 			}
 		}
 	},
@@ -42,6 +42,7 @@ export default {
 			this.formType = 'add-' + value
 		},
 		addNote(note) {
+			console.log('note', note)
 			noteService.addNote(note)
 			this.$router.go()
 		}

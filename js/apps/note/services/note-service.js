@@ -36,9 +36,8 @@ function addNote(note) {
 	const newNote = {
 		id: storageService.makeId(),
 		type: note.type,
-		info: {
-			txt: note.txt
-		},
+		info: note.info,
+		title: note.title,
 		style: {
 			...note.style
 		}
@@ -50,51 +49,63 @@ function getNotes() {
 	return notes
 }
 
-var notes = [
+const notes = [
 	{
-		id: 'n101',
-		type: 'note-txt',
-		isPinned: true,
-		info: {
-			txt: 'Fullstack Me Baby!'
-		},
+		id: storageService.makeId(),
+		type: 'note-vid',
+		isPinned: false,
+		title: 'Why I HATE JavaScript',
+		info: 'qvFG8J7SUDE',
 		style: {
-			backgroundColor: '#00d'
+			color: '#FF9F29',
+			backgroundColor: '#000000'
 		}
 	},
 	{
-		id: 'n102',
+		id: storageService.makeId(),
+		type: 'note-txt',
+		isPinned: false,
+		title: 'hello!',
+		info: 'Fullstack Me Baby!',
+		style: {
+			color: '#54BAB9',
+			backgroundColor: '#F7ECDE'
+		}
+	},
+	{
+		id: storageService.makeId(),
 		type: 'note-img',
-		info: {
-			url: 'https://images.unsplash.com/photo-1656185925303-7e9c9f49e18d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1734&q=80',
-			title: 'Bobi and Me'
-		},
+		isPinned: false,
+		title: 'Cute cat',
+		info: 'https://images.unsplash.com/photo-1656185925303-7e9c9f49e18d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1734&q=80',
 		style: {
-			backgroundColor: '#00d'
+			color: '#F0EBE3',
+			backgroundColor: '#576F72'
 		}
 	},
 	{
-		id: 'n103',
+		id: storageService.makeId(),
 		type: 'note-todo',
-		info: {
-			label: 'Get my stuff together',
-			todo: [
-				{ txt: 'Driving liscence', doneAt: null },
-				{ txt: 'Coding power', doneAt: 187111111 }
-			]
-		},
+		isPinned: false,
+		title: 'Get my stuff together',
+		info: [
+			{ txt: 'Driving license', doneAt: null },
+			{ txt: 'Coding power', doneAt: 187111111 }
+		],
 		style: {
-			backgroundColor: '#00d'
+			color: '#576f72',
+			backgroundColor: '#FFDCAE'
 		}
 	},
 	{
-		id: 'rmqj5COD',
-		type: 'note-txt',
-		info: {
-			txt: 'nulasdasdsal'
-		},
+		id: storageService.makeId(),
+		type: 'note-vid',
+		isPinned: false,
+		title: 'embed a vid',
+		info: '9YffrCViTVk',
 		style: {
-			backgroundColor: 'red'
+			color: '#76BA99',
+			backgroundColor: '#FFDCAE'
 		}
 	}
 ]

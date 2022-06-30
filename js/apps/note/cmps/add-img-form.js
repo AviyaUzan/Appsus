@@ -1,14 +1,37 @@
 export default {
+	props: ['colors'],
 	template: `
-    		<form @change="doSomething" class="add-keep-input flex">
-				<input type="text" placeholder="Enter image URL..." />
+    		<form @submit.prevent="onAddNote" class="add-keep-input flex">
+				<input :style="getColors" v-model="title" type="text" placeholder="Title" />
+				<input :style="getColors" v-model="info" type="text" placeholder="Enter image URL..." />
+				<button type="submit">submit</button>
 			</form>
 `,
 	data() {
-		return {}
+		return {
+			title: null,
+			info: null
+		}
 	},
-	created() {},
-	methods: {},
-	computed: {},
-	unmounted() {}
+	methods: {
+		onAddNote() {
+			this.$emit('addNote', {
+				title: this.title,
+				info: this.info,
+				type: 'note-img',
+				style: {
+					color: this.colors.txt,
+					backgroundColor: this.colors.bg
+				}
+			})
+		}
+	},
+	computed: {
+		getColors() {
+			return {
+				color: this.colors.txt,
+				'background-color': this.colors.bg
+			}
+		}
+	}
 }

@@ -1,24 +1,27 @@
 export default {
 	props: ['note'],
 	template: `
-       <article :style="{backgroundColor: note.style.backgroundColor}" class="note flex">
-        <span>hi</span>
-		<h3>{{note.info.label}}</h3>
-        <div v-for="todo in note.info.todo" class="todo-container">
-            {{todo.txt}} done at: {{todo.doneAt}}
+       <article :style="getStyle" class="note flex">
+		<h3>{{note.title}}</h3>
+        <div v-for="(todo,idx) in note.info" class="todo-container">
+           {{idx}}.{{todo.txt}} 
+			<!-- done at: {{todo.doneAt}} -->
         </div>
-		<img :src="note.info.txt" alt="">
 	</article>
 
 `,
 	data() {
 		return {}
 	},
-	created() {},
 	methods: {},
-	computed: {},
+	computed: {
+		getStyle() {
+			return {
+				backgroundColor: this.note.style.backgroundColor,
+				color: this.note.style.color
+			}
+		}
+	},
 	unmounted() {},
-	created() {
-
-	}
+	created() {}
 }

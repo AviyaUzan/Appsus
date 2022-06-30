@@ -10,6 +10,7 @@ export default {
 	<section class="note-preview-container grid">
 		<div v-for="note in notes" >
 			<component :is="note.type" :note='note'></component>
+			<button @click="onRemoveNote">remove</button>
 		</div>
 	</section>
 	`,
@@ -25,10 +26,9 @@ export default {
 		}
 	},
 	created() {
-		// console.log(noteService.query())
 		noteService.query().then(notes => (this.notes = notes))
 	},
-	methods: {},
-	computed: {},
-	unmounted() {}
+	methods: {
+		onRemoveNote() {}
+	}
 }
