@@ -52,15 +52,7 @@ function removeNote(id) {
 }
 
 function pinNote(id) {
-	return storageService.query(NOTES_KEY).then(notes => {
-		const noteIdx = notes.findIndex(note => note.id === id)
-		console.log(noteIdx)
-		const pinnedNote = notes.splice(noteIdx, 1)
-		console.log(...pinnedNote)
-		notes.unshift(...pinnedNote)
-		console.log(notes)
-		return notes
-	})
+	return get(id).then(note => storageService.putFirst(NOTES_KEY, note))
 }
 
 function getNotes() {

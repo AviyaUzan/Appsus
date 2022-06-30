@@ -5,10 +5,10 @@ import { noteService } from '../apps/note/services/note-service.js'
 export default {
 	template: `
  		<h1>notes :)</h1>
-		<section class="note-app">
+		<section class="note-app flex">
 
-		<label for="search-keep">🔍
-            <input type="search"  id="search-keep">
+		<label for="search-note">🔍
+            <input type="search"  id="search-note">
 		</label>
 		
 		<add-note @add-note="addNote"/>
@@ -42,7 +42,11 @@ export default {
 			})
 		},
 		pinNote(id) {
-			noteService.pinNote(id).then(notes => (this.notes = notes))
+			noteService.pinNote(id).then(notes => {
+				console.log(notes)
+				this.notes = notes
+			})
+			// this.$router.go()
 		}
 	}
 }

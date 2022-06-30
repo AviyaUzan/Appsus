@@ -1,5 +1,5 @@
 html {
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Roboto-Regular', monospace;
 }
 
 * {
@@ -18,10 +18,10 @@ h5 {
 	margin: 0;
 }
 
-img{
+img {
 	width: 100%;
 }
 
-button{
+button {
 	cursor: pointer;
 }

@@ -1,7 +1,7 @@
 export default {
 	props: ['note'],
 	template: `
-    <article :style="getStyle" class="flex note">
+    <article :style="getStyle" class="flex note-content">
 		<h3>{{note.title}}</h3>
 		<img :src="note.info" alt="img">
 	</article>

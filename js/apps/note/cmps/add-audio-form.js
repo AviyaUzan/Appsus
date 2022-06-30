@@ -1,6 +1,6 @@
 export default {
 	template: `
-    <form @change="doSomething" class="add-keep-input flex">
+    <form @change="doSomething" class="add-note-input flex">
         <input type="text" placeholder="Enter audio URL..." />
     </form>
 `,

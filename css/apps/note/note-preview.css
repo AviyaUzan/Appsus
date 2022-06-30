@@ -4,6 +4,13 @@
 }
 
 .note {
+	box-shadow: 0 1px 2px 0 #3c40434d, 0 2px 6px 2px #3c404326;
+}
+.note-btn-container img {
+	width: 30px;
+}
+
+.note-content {
 	width: 240px;
 	min-height: 200px;
 	flex-direction: column;
@@ -12,7 +19,7 @@
 	color: white;
 	border: 1px solid #e0e0e0;
 }
-.note img {
+.note-content img {
 	object-fit: cover;
 	width: 230px;
 }

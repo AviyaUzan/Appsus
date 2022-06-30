@@ -1,0 +1,8 @@
+.note-app {
+	flex-direction: column;
+	align-items: center;
+}
+
+.note-app button {
+	all: unset;
+}

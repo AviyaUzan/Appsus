@@ -3,21 +3,27 @@ import addTodo from './add-todo-form.js'
 import addImg from './add-img-form.js'
 import addVid from './add-vid-form.js'
 import addAudio from './add-audio-form.js'
-import { noteService } from '../services/note-service.js'
 
 export default {
 	template: `
-  <section class="add-keep">
+  <section class="add-note">
         <component @add-note="addNote" :is="formType"  :colors="colors"/>
 		<!-- <add-txt/> -->
-        <div class="add-keep-btn-container">
-         <button><input v-model="colors.txt" type="color"></button>
-         <button><input v-model="colors.bg" type="color"></button>
-		 <button @click ="onChangeInput" value="txt" >Add text</button>
-		 <button @click ="onChangeInput" value="todo">task list</button>
-		 <button @click ="onChangeInput" value="img" >Add image</button>
-		 <button @click ="onChangeInput" value="vid">add video</button>
-		 <button @click ="onChangeInput" value="audio">add audio</button>
+        <div class="add-note-btn-container">
+
+		 <label for="note-color-input"><img src="../../../../assest/icons/txt-color.svg" alt="img"></label>
+         <input v-show="false" id=note-color-input v-model="colors.txt" type="color">
+
+		 <label for="note-bg-color-input"><img src="../../../../assest/icons/background-color.svg" alt="img"></label>
+		 <input v-show="false" id="note-bg-color-input" v-model="colors.bg" type="color">
+
+		 <button @click ="onChangeInput" value="txt" ><img src="assest/icons/text.svg" alt="img"></button>
+		 <button @click ="onChangeInput" value="todo"><img src="assest/icons/todo.svg" alt="todo"></button>
+		 <button @click ="onChangeInput" value="img" ><img src="assest/icons/img.svg" alt="img"></button>
+		 <button @click ="onChangeInput" value="vid"><img src="assest/icons/video.svg" alt="img"></button>
+		 <button @click ="onChangeInput" value="audio"><img src="../../../../assest/icons/audio.svg" alt="img"></button>
+		 
+
         </div>
 		</section> 
     `,
@@ -32,8 +38,8 @@ export default {
 		return {
 			formType: 'add-txt',
 			colors: {
-				txt: '#ffffff',
-				bg: '#000000'
+				txt: '#202124',
+				bg: '#ffffff'
 			}
 		}
 	},
@@ -43,7 +49,6 @@ export default {
 		},
 		addNote(note) {
 			this.$emit('addNote', note)
-			// noteService.addNote(note)
 		}
 	}
 }
