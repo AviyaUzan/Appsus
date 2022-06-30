@@ -8,10 +8,11 @@ import { noteService } from '../services/note-service.js'
 export default {
 	template: `
   <section class="add-keep">
-        <component @add-note="addNote" :is="formType"/>
+        <component @add-note="addNote" :is="formType"  :colors="colors"/>
 		<!-- <add-txt/> -->
         <div class="add-keep-btn-container">
-         <button><input type="color"></button>
+         <button><input v-model="colors.txt" type="color"></button>
+         <button><input v-model="colors.bg" type="color"></button>
 		 <button @click ="onChangeInput" value="txt" >Add text</button>
 		 <button @click ="onChangeInput" value="todo">task list</button>
 		 <button @click ="onChangeInput" value="img" >Add image</button>
@@ -28,7 +29,13 @@ export default {
 		addAudio
 	},
 	data() {
-		return { formType: 'add-txt' }
+		return {
+			formType: 'add-txt',
+			colors: {
+				txt: '#000000',
+				bg: '#ffffff'
+			}
+		}
 	},
 	methods: {
 		onChangeInput({ target: { value } }) {

@@ -40,7 +40,7 @@ function addNote(note) {
 			txt: note.txt
 		},
 		style: {
-			backgroundColor: 'red'
+			...note.style
 		}
 	}
 	storageService.post(NOTES_KEY, newNote)
