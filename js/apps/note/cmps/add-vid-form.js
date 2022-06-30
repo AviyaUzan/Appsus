@@ -3,7 +3,7 @@ export default {
 	template: `
     		<form @submit.prevent="onAddNote" class="add-note-input flex">
 				<input :style="getColors" v-model="title" type="text" placeholder="Title" />
-				<input :style="getColors" v-model="info" type="text" placeholder="Enter image URL..." />
+				<input :style="getColors" v-model="info" type="text" placeholder="Enter YouTube URL..." />
 				<button type="submit">submit</button>
 			</form>
 `,
@@ -31,6 +31,7 @@ export default {
 				/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
 			const match = url.match(regExp)
 			return match && match[2].length === 11 ? match[2] : null
+			//this function gets video id from a youtube url
 		}
 	},
 	computed: {

@@ -117,5 +117,44 @@ const notes = [
 			color: '#76BA99',
 			backgroundColor: '#FFDCAE'
 		}
+	},
+	{
+		id: storageService.makeId(),
+		type: 'note-img',
+		isPinned: false,
+		title: '🤦‍♂️',
+		info: ' https://assets-global.website-files.com/5f3c19f18169b62a0d0bf387/60d33beacf4ba7263a23cd79_qh6ImC4NPdyPbvn-7ns8FYsgOskDPDWLnX31mLCOgSwpX_SQgmo8krqdg4e6XAnSbqRAtZMYqlf7UTvlHiXgt5YtMwbt9IRY1fAbOjyq5hARui-xEQUgI48EOjhJGuIsSFDg90L6.jpeg',
+		style: {
+			color: '#76BA99',
+			backgroundColor: '#FFDCAE'
+		}
+	},
+	{
+		id: storageService.makeId(),
+		type: 'note-todo',
+		isPinned: false,
+		title: 'TODO:',
+		info: [
+			{ txt: 'a todo', doneAt: null },
+			{ txt: 'list containing', doneAt: 187111111 },
+			{ txt: 'todo', doneAt: 187111111 },
+			{ txt: 'items', doneAt: 187111111 },
+			{ txt: 'wow!', doneAt: 187111111 }
+		],
+		style: {
+			color: '#1E2019',
+			backgroundColor: '#E2C044'
+		}
+	},
+	{
+		id: storageService.makeId(),
+		type: 'note-img',
+		isPinned: false,
+		title: null,
+		info: 'https://images.unsplash.com/photo-1543946207-39bd91e70ca7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80',
+		style: {
+			color: '#76BA99',
+			backgroundColor: '#FFDCAE'
+		}
 	}
 ]

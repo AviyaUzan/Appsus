@@ -1,8 +1,8 @@
-import newEmailCmp from './new-email.cmp.js';
+import newEmailCmp from './new-email.cmp.js'
 
 export default {
-    props: ['emails'],
-    template: `
+	props: ['emails'],
+	template: `
 	<section class="email-side-nav flex">
             <img @click="isNewEmailShow = !isNewEmailShow" class="btn-side-nave email-action compose compose-img" src="https://support.virtru.com/hc/article_attachments/360045048294/mceclip0.png">
             <new-email  v-if="isNewEmailShow"/>
@@ -16,20 +16,19 @@ export default {
             <!-- connect notes -->
 	</section>
   `,
-    components: {
-        newEmailCmp
-    },
-    created() {
-    },
-    data() {
-        return {
-            isNewEmailShow: true
-        };
-    },
-    methods: {
-        filterBy(input){
-            this.$emit("filter", input)
-          },
-    },
-    computed: {},
-};
+	components: {
+		newEmailCmp
+	},
+	created() {},
+	data() {
+		return {
+			isNewEmailShow: true
+		}
+	},
+	methods: {
+		filterBy(input) {
+			this.$emit('filter', input)
+		}
+	},
+	computed: {}
+}
