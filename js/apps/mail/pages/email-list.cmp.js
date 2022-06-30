@@ -10,7 +10,7 @@ export default {
 			<div v-if="!emailShow" @click="email.isRead = !email.isRead" :class="{read: email.isRead}" class="email-list">
 			<div class="email-actions-1">
  					<input type="checkbox" name="" id="">
- 					<button class="btn email-action" @click="email.state = 'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="!email.isStarred" ><img class="star-icon" src="assest/icons/emptie-star.png"></button>
+ 					<button class="btn email-action" @click="email.state = 'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="!email.isStarred" ><img class="star-icon" src="assest/icons/empty-star.png"></button>
  					<button class="btn email-action" @click="email.state = !'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="email.isStarred" ><img class="star-icon" src="assest/icons/filled-star.png"></button>
  				</div>
  				<router-link class="email-preview-router" :to="'/email/'+email.id">
