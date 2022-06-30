@@ -1,12 +1,22 @@
 .read{
-    background-color: rgb(175, 170, 170);
+    background-color: rgb(233, 227, 227);
+    color: rgb(124, 123, 123);
 }
 
+/* .email-action-2{
+    position: relative;
+}
+
+.action-right{
+    position: absolute;
+} */
+
+
 .email-list {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: space-between;
-    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    margin-top: 0.7%;
+    margin-right: 2%;
 }
 
 .star-icon {
@@ -20,16 +30,3 @@
     border: none;
     overflow: hidden;
 }
-
-/* .table {
-    display: table;
-    width: 100%;
-}
-
-.table .row {
-    display: table-row;
-}
-
-.table .row .td{
-    display: table-cell;
-} */

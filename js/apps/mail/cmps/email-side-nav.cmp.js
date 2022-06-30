@@ -1,21 +1,30 @@
+import newEmailCmp from './new-email.cmp.js';
+
 export default {
     props: ['emails'],
     template: `
 	<section class="email-side-nav flex">
-            <button class="btn" @click="filterBy('all')">All</button>
-            <button class="btn" @click="filterBy('inbox')">inbox</button>
-            <button class="btn" @click="filterBy('starred')">starred</button>
-            <button class="btn" @click="filterBy('sent')">sent</button>
-            <button class="btn" @click="filterBy('trash')">trash</button>
-            <button class="btn" @click="filterBy('drafts')">drafts</button>
+            <img @click="isNewEmailShow = !isNewEmailShow" class="btn-side-nave email-action compose compose-img" src="https://support.virtru.com/hc/article_attachments/360045048294/mceclip0.png">
+            <new-email  v-if="isNewEmailShow"/>
+            <!-- <div v-if="isNewEmailShow" class="new-email"></div> -->
+            <button class="btn-side-nave email-action" @click="filterBy('all')">All</button>
+            <button class="btn-side-nave email-action" @click="filterBy('inbox')">inbox</button>
+            <button class="btn-side-nave email-action" @click="filterBy('starred')">starred</button>
+            <button class="btn-side-nave email-action" @click="filterBy('sent')">sent</button>
+            <button class="btn-side-nave email-action" @click="filterBy('trash')">trash</button>
+            <button class="btn-side-nave email-action" @click="filterBy('drafts')">drafts</button>
             <!-- connect notes -->
 	</section>
   `,
-    components: {},
+    components: {
+        newEmailCmp
+    },
     created() {
     },
     data() {
-        return {};
+        return {
+            isNewEmailShow: true
+        };
     },
     methods: {
         filterBy(input){

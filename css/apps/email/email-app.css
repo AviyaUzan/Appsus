@@ -5,6 +5,8 @@ flex-direction: column;
 
 .email-content{
     display: flex;
+    gap: 20px;
+    margin-top: 1%;
 }
 
 .email-app-list{
