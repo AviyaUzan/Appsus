@@ -17,7 +17,7 @@ export default {
 					 <email-preview :class="{read: email.isRead}" :email="email"/>
 				</router-link>
  				<div class="email-actions-2">
-				 <button class="email-action action-right delete-email" @click="moveToTrash(email.id)" >❌</button>
+				 <button class="email-action action-right delete-email" @click="moveToTrash(email.id)" ><img src="assest/icons/delete.svg"></button>
 				 <button class="email-action action-right" v-if="!email.isRead" >📧</button>
 				<button class="email-action action-right" v-if="email.isRead">💌</button>
  				</div>
