@@ -4,19 +4,22 @@
     object-fit: cover;
     border-radius: 50%;
     object-position:50% 50%;
+    margin-top: .35em;
 }
-
-.email-preview-router{
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-}
-
 .email-preview-container{
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 5fr;
+    grid-template-columns: .6fr 2fr 1.5fr 9fr;
     place-items: start;
     width: 100%;
+}
+
+.email-preview-container p{
+    color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.preview-router{
+    text-decoration: none;
 }
 
 li{

@@ -4,17 +4,23 @@ export default {
 	name:'email-details',
 	template: `
     <section class="email-details" v-if="email">
-		{{email.subject}}
-	<div>
+	<div class="details-routers">
+		<div>
+		<router-link title="back to inbox" class="details-btn" :to="'/email/all'"><--</router-link>
+		</div>
+		<div class="next-prev-btns">
+			<router-link title="Previous Email" class="details-btn" :to="'/email/' + prevEmailId"><-- Previous</router-link>
+			<router-link title="Next Email" class="details-btn" :to="'/email/' + nextEmailId">Next --></router-link>
+		</div>	
+	</div>
+	<div class="email-subject">{{email.subject}}</div>	
+	<div class="email-from">
 		<img class="mail-img" :src="email.img">
 	   {{email.to}}
 	</div>
+	<div class="email-body">
 	{{email.body}}
-	<div>
-		<router-link :to="'/email/' + nextEmailId">Next email</router-link>
-		<router-link :to="'/email/' + prevEmailId">Previous email</router-link>
 	</div>
-	<router-link class="back-btn" :to="'/email/all'">Back to inbox>></router-link>
     </section>
 
 	

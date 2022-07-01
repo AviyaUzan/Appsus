@@ -79,7 +79,7 @@ function getEmails() {
             name: 'aviya uzan',
             id: '101',
             subject: 'Miss you!',
-            body: 'Would love to catch up sometimes',
+            body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione est odit quidem asperiores quos similique placeat iusto cupiditate quas, alias rerum iure, suscipit, facilis beatae doloremque harum. Veritatis, incidunt sit!',
             isRead: false,
             sentAt: 331133930594,
             to: 'momo@momo.com',

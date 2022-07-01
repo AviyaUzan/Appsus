@@ -14,9 +14,9 @@ export default {
 		formatedText() {
 			return this.isMore ? this.text : this.text.slice(0, 100)
 		},
-		readText() {
-			return this.isMore ? ' Read Less' : ' Read more'
-		},
+		// readText() {
+		// 	return this.isMore ? ' Read Less' : ' Read more'
+		// },
 		readStyle() {
 			return {
 				color: this.isMore ? 'red' : 'blue',
