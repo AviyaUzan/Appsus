@@ -20,7 +20,7 @@ export default {
 			</select>
 		
 		<add-note @add-note="addNote"/>
-		<note-preview @colorChange="changeColor" @pin="pinNote" @remove="removeNote" :notes="notesToShow"/>
+		<note-preview @duplicate="duplicateNote" @colorChange="changeColor" @pin="pinNote" @remove="removeNote" :notes="notesToShow"/>
 
 		</section>
 
@@ -40,15 +40,15 @@ export default {
 		}
 	},
 	created() {
+		noteService.query().then(notes => console.log(notes))
 		noteService.query().then(notes => (this.notes = notes))
 
 		eventBus.on('content-change', this.changeContent)
+		eventBus.on('todo-change', this.changeTodo)
 	},
 	methods: {
 		addNote(note) {
-			noteService.addNote(note).then(() => {
-				this.notes.unshift(note)
-			})
+			noteService.addNote(note).then(() => this.notes.unshift(note))
 		},
 		removeNote(id) {
 			noteService.removeNote(id).then(() => {
@@ -59,11 +59,21 @@ export default {
 		pinNote(id) {
 			noteService.pinNote(id).then(notes => (this.notes = notes))
 		},
+		duplicateNote(id) {
+			noteService.duplicateNote(id).then(note => this.notes.unshift(note))
+		},
 		changeColor(note) {
 			noteService.updateNote(note).then(notes => (this.notes = notes))
 		},
 		changeContent({ txt, note, type }) {
 			note[type] = txt
+			noteService.updateNote(note)
+		},
+		changeTodo({ txt, note, idx }) {
+			console.log(note)
+			console.log(idx)
+			note.info[idx].txt = txt
+			note.info[idx].doneAt = null
 			noteService.updateNote(note)
 		}
 	},

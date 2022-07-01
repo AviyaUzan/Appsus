@@ -8,7 +8,8 @@ export const noteService = {
 	save,
 	removeNote,
 	pinNote,
-	updateNote
+	updateNote,
+	duplicateNote
 }
 
 function query() {
@@ -59,6 +60,12 @@ function pinNote(id) {
 function updateNote(note) {
 	storageService.put(NOTES_KEY, note)
 	return storageService.query(NOTES_KEY)
+}
+
+function duplicateNote(id) {
+	return get(id).then(note => {
+		return storageService.post(NOTES_KEY, note)
+	})
 }
 
 function getNotes() {

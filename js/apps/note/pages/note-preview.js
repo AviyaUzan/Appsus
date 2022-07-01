@@ -14,6 +14,7 @@ export default {
 				
 				<button @click="onRemoveNote(note.id)"> <img src="assest/icons/delete.svg" alt="delete"> </button>
 				<button @click="onPinNote(note.id)"> <img src="assest/icons/pin.svg" alt="pin"> </button>
+				<button @click="onDuplicateNote(note.id)"> <img src="assest/icons/duplicate.svg" alt="duplicate"> </button>
 				
 				<!-- <label :data-id="note.id" for="note-bg-color"><img src="assest/icons/background-color.svg" alt="img"></label> -->
 				<input @input="onSetBgColor($event,note)" :value="note.style.backgroundColor"  id="note-bg-color"  type="color">
@@ -46,6 +47,9 @@ export default {
 		},
 		onPinNote(id) {
 			this.$emit('pin', id)
+		},
+		onDuplicateNote(id) {
+			this.$emit('duplicate', id)
 		},
 		onSetBgColor({ target: { value } }, note) {
 			note.style.backgroundColor = value

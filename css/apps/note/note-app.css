@@ -1,6 +1,9 @@
 .note-app {
 	flex-direction: column;
 	/* align-items: center; */
+	max-width: 1020px;
+	margin: auto;
+	color: green;
 }
 
 .note-app button {
@@ -30,4 +33,24 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+#note-color,
+#note-bg-color {
+	all: unset;
+	background-image: url('../../../assest/icons/background-color.svg');
+	width: 24px;
+	height: 24px;
+	background-color: transparent;
+	align-self: center;
+}
+#note-color {
+	background-image: url('../../../assest/icons/txt-color.svg');
+}
+#note-color::-webkit-color-swatch,
+#note-bg-color::-webkit-color-swatch {
+	border: none;
+	background-color: transparent !important;
+	/* this removes default color input style */
+	/* had to use important to override js */
 }
