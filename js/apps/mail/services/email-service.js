@@ -19,7 +19,6 @@ const loggedinUser = {
 _creatEmails()
 
 export const emailService = {
-<<<<<<< HEAD
     getEmails,
     get,
     query,
@@ -28,28 +27,14 @@ export const emailService = {
     getPrevEmailId,
     getNextEmailId,
 };
-=======
-	getEmails,
-	get,
-	query,
-	remove,
-	save
-}
->>>>>>> 3727e87ebc92b233f818638a247c00003889f9a1
 
 function query() {
 	return storageService.query(EMAILS_KEY)
 }
 
-<<<<<<< HEAD
    function remove(emailId) {
     return storageService.remove(EMAILS_KEY, emailId)
   }
-=======
-function remove(emailId) {
-	return storageService.remove(EMAIL_KEYS, emailId)
-}
->>>>>>> 3727e87ebc92b233f818638a247c00003889f9a1
 
 function get(emailId) {
 	console.log(emailId)
@@ -58,13 +43,8 @@ function get(emailId) {
 }
 
 function save(email) {
-<<<<<<< HEAD
     if (email.id) return storageService.put(EMAILS_KEY, email)
     else return storageService.post(EMAILS_KEY, email)
-=======
-	if (email.id) return storageService.put(EMAIL_KEY, email)
-	else return storageService.post(EMAIL_KEY, email)
->>>>>>> 3727e87ebc92b233f818638a247c00003889f9a1
 }
 
 function getPrevEmailId(emailId){
