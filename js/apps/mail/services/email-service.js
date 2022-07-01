@@ -1,27 +1,55 @@
 import { storageService } from '../../../services/async-storage-service.js';
 import { utilService } from '../../../services/util-service.js';
 
-const MAILS_KEY = 'emails';
+const EMAILS_KEY = 'emails';
+
+const criteria = {
+    status: 'inbox/sent/trash/draft',
+    txt: 'puki', // no need to support complex text search
+    isRead: true, // (optional property, if missing: show all)
+    isStared: true, // (optional property, if missing: show all)
+    lables: ['important', 'romantic'] // has any of the labels
+   }
+   
+
+const loggedinUser = {
+    email: 'user@appsus.com',
+    fullname: 'Mahatma Appsus'
+   }
+
 _creatEmails()
 
 export const emailService = {
     getEmails,
     get,
     query,
+    remove,
+    save,
 };
 
 function query() {
-    return storageService.query(MAILS_KEY)
+    return storageService.query(EMAILS_KEY)
   }
 
-console.log('getEmails()',getEmails())
+   function remove(emailId) {
+    return storageService.remove(EMAIL_KEYS, emailId)
+  }
+
+function get(emailId) {
+    return storageService.get(EMAILS_KEY, emailId)
+}
+
+function save(email) {
+    if (email.id) return storageService.put(EMAIL_KEY, email)
+    else return storageService.post(EMAIL_KEY, email)
+}
 
 function _creatEmails() {
     // let emails = emailService.query().then(mails => this.mails = mails) 
-    let emails = utilService.loadFromStorage(MAILS_KEY)
+    let emails = utilService.loadFromStorage(EMAILS_KEY)
     if (!emails || !emails.length) {
         emails = getEmails()
-        utilService.saveToStorage(MAILS_KEY, emails)
+        utilService.saveToStorage(EMAILS_KEY, emails)
     }
     return emails;
 }
@@ -211,19 +239,3 @@ function getEmails() {
     ];
 }
 
-const loggedinUser = {
-    email: 'user@appsus.com',
-    fullname: 'Mahatma Appsus'
-   }
-
-function get(emailId) {
-    return storageService.get(MAILS_KEY, emailId)
-}
-
-//   function _createMails() {
-//     if (!mails || !mails.length) {
-//         mails = getMails()
-//         utilService.saveToStorage(MAILS_KEY, mails);
-//     }
-//     return mails;
-//   }

@@ -3,6 +3,7 @@ import emailApp from './pages/email-app.cmp.js'
 import noteApp from './pages/note-app.cmp.js'
 import bookApp from './pages/books-app.cmp.js'
 import emailDetails from '../js/apps/mail/pages/email-details.cmp.js'
+import emailList from '../js/apps/mail/pages/email-details.cmp.js'
 
 
 const routes = [
@@ -12,7 +13,17 @@ const routes = [
 	},
 	{
 		path: '/email',
-		component: emailApp
+		component: emailApp,
+		children: [
+			{
+			  path: "all",
+			  component: emailList,
+			},
+			{
+			  path: ":emailId",
+			  component: emailDetails
+			}
+		  ],
 	},
 	{
 		path: '/note',
@@ -22,10 +33,10 @@ const routes = [
 		path: '/book',
 		component: bookApp
 	},
-	{
-	    path: '/email/:emailId',
-	    component: emailDetails
-	},
+	// {
+	//     path: '/email/:emailId',
+	//     component: emailDetails
+	// },
 ]
 
 export const router = VueRouter.createRouter({

@@ -1,5 +1,5 @@
 import emailPreview from '../cmps/email-preview.cmp.js'
-import emailDetails from './email-details.cmp.js'
+// import emailDetails from './email-details.cmp.js'
 
 export default {
 	props: ["emails"],
@@ -13,9 +13,7 @@ export default {
  					<button class="btn email-action" @click="email.state = 'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="!email.isStarred" ><img class="star-icon" src="assest/icons/empty-star.png"></button>
  					<button class="btn email-action" @click="email.state = !'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="email.isStarred" ><img class="star-icon" src="assest/icons/filled-star.png"></button>
  				</div>
- 				<router-link class="email-preview-router" :to="'/email/'+email.id">
 					 <email-preview :class="{read: email.isRead}" :email="email"/>
-				</router-link>
  				<div class="email-actions-2">
 				 <button class="email-action action-right delete-email" @click="moveToTrash(email.id)" ><img src="assest/icons/delete.svg"></button>
 				 <button class="email-action action-right" v-if="!email.isRead" >📧</button>
@@ -27,7 +25,7 @@ export default {
   `,
 	components: {
 		emailPreview,
-		emailDetails,
+		// emailDetails,
 	},
 	created(){
 	},
@@ -56,3 +54,6 @@ export default {
 	computed: {
 	},
   };
+
+//   <router-link class="email-preview-router" :to="'/email/'+email.id">
+// </router-link>
