@@ -25,6 +25,8 @@ export const emailService = {
     query,
     remove,
     save,
+    getPrevEmailId,
+    getNextEmailId,
 };
 
 function query() {
@@ -32,7 +34,7 @@ function query() {
   }
 
    function remove(emailId) {
-    return storageService.remove(EMAIL_KEYS, emailId)
+    return storageService.remove(EMAILS_KEY, emailId)
   }
 
 function get(emailId) {
@@ -40,9 +42,25 @@ function get(emailId) {
 }
 
 function save(email) {
-    if (email.id) return storageService.put(EMAIL_KEY, email)
-    else return storageService.post(EMAIL_KEY, email)
+    if (email.id) return storageService.put(EMAILS_KEY, email)
+    else return storageService.post(EMAILS_KEY, email)
 }
+
+function getPrevEmailId(emailId){
+    return storageService.query(EMAILS_KEY)
+      .then(emails => {
+        const idx = emails.findIndex(email => email.id === emailId)
+        return (idx > 0)? emails[idx - 1].id : emails[emails.length - 1].id
+    })
+  }
+  
+  function getNextEmailId(emailId) {
+      return storageService.query(EMAILS_KEY)
+      .then(emails => {
+        const idx = emails.findIndex(email => email.id === emailId)
+        return (idx < emails.length-1)? emails[idx + 1].id : emails[0].id
+    })
+  }
 
 function _creatEmails() {
     // let emails = emailService.query().then(mails => this.mails = mails) 
@@ -58,11 +76,11 @@ function getEmails() {
     return [
         {
             name: 'aviya uzan',
-            id: storageService.makeId(),
+            id: '101',
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes',
             isRead: false,
-            sentAt: 1551133930594,
+            sentAt: 331133930594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=712&q=80",
@@ -70,11 +88,11 @@ function getEmails() {
         },
         {
             name: 'maddy pollak',
-            id: storageService.makeId(),
+            id: '102',
             subject: 'Hello Mama',
             body: 'I love you',
             isRead: true,
-            sentAt: 155114440594,
+            sentAt: 15511444334,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
@@ -82,23 +100,23 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: storageService.makeId(),
+            id: '103',
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
-            sentAt: 14440594,
+            sentAt: 14444594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
             state: 'inbox',
         },
         {
-            name: 'roni kuchin',
-            id: storageService.makeId(),
+            name: 'riki mahpud',
+            id: '104',
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
-            sentAt: 14440594,
+            sentAt: 144555594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXN8ZW58MHx8MHx8&w=1000&q=80",
@@ -106,11 +124,11 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: storageService.makeId(),
+            id: '105',
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
-            sentAt: 14440594,
+            sentAt: 1446666,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://www.taylorherring.com/wp-content/uploads/2015/03/Archetypal-Male-Face-of-Beauty-embargoed-to-00.01hrs-30.03.15.jpg",
@@ -118,11 +136,11 @@ function getEmails() {
         },
         {
             name: 'aviya uzan',
-            id: storageService.makeId(),
+            id: '106',
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes',
             isRead: false,
-            sentAt: 1551133930594,
+            sentAt: 155550594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=712&q=80",
@@ -130,11 +148,11 @@ function getEmails() {
         },
         {
             name: 'maddy pollak',
-            id: storageService.makeId(),
+            id: '107',
             subject: 'Hello Mama',
             body: 'I love you',
             isRead: true,
-            sentAt: 155114440594,
+            sentAt: 15511666694,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
@@ -142,11 +160,11 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: storageService.makeId(),
+            id: '108',
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
-            sentAt: 14440594,
+            sentAt: 1333394,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
@@ -154,11 +172,11 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: storageService.makeId(),
+            id: '109',
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
-            sentAt: 14440594,
+            sentAt: 166594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXN8ZW58MHx8MHx8&w=1000&q=80",
@@ -166,11 +184,11 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: storageService.makeId(),
+            id: '110',
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
-            sentAt: 14440594,
+            sentAt: 14888894,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://www.taylorherring.com/wp-content/uploads/2015/03/Archetypal-Male-Face-of-Beauty-embargoed-to-00.01hrs-30.03.15.jpg",
@@ -178,11 +196,11 @@ function getEmails() {
         },
         {
             name: 'aviya uzan',
-            id: storageService.makeId(),
+            id: '111',
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes',
             isRead: false,
-            sentAt: 1551133930594,
+            sentAt: 12222930594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=712&q=80",
@@ -190,11 +208,11 @@ function getEmails() {
         },
         {
             name: 'maddy pollak',
-            id: storageService.makeId(),
+            id: '112',
             subject: 'Hello Mama',
             body: 'I love you',
             isRead: true,
-            sentAt: 155114440594,
+            sentAt: 155555594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
@@ -202,11 +220,11 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: storageService.makeId(),
+            id: '113',
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
-            sentAt: 14440594,
+            sentAt: 14222222,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
@@ -214,11 +232,11 @@ function getEmails() {
         },
         {
             name: 'maddy pollak',
-            id: storageService.makeId(),
+            id: '114',
             subject: 'Hello Mama',
             body: 'I love you',
             isRead: true,
-            sentAt: 155114440594,
+            sentAt: 16664440594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
@@ -226,11 +244,11 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: storageService.makeId(),
+            id: '115',
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
-            sentAt: 14440594,
+            sentAt: 77594,
             to: 'momo@momo.com',
             isStarred: false,
             img: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",

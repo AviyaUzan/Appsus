@@ -1,5 +1,6 @@
 .email-side-nav{
     width: 10%;
+    height: 60em;
     flex-direction: column;
     margin-left: 2%;
     /* background-color: rgb(221, 147, 51); */

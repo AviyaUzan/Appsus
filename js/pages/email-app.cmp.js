@@ -9,11 +9,7 @@ export default {
         		<input type="text" placeholder="Search email">
                 <div class="email-content">
                     <email-side-nav @filter="filterByEmailState"/>
-                    <!-- <router-link to="/email/all">all</router-link> |
-                    <router-link to="'/email/'+email.id">email</router-link>
-                    <router-link to="/about/service">Services</router-link> -->
-                    <router-view :emails="emailsToShow" />
-                    <!-- <email-list class="email-app-list" :emails="emailsToShow"/> -->
+                    <router-view :emails="emailsToShow"/>
                 </div>
     </section>
 `,
@@ -39,9 +35,6 @@ export default {
             console.log('this.filterBy',this.filterBy)
         },
         // @selected="selectEmail"
-        // selectEmail(emailId){
-        //     this.router.push(`/email/${emailId}`)
-        // }
     },
     computed: {
         emailsToShow() {
