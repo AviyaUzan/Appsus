@@ -15,12 +15,12 @@ export default {
 				<button @click="onRemoveNote(note.id)"> <img src="assest/icons/delete.svg" alt="delete"> </button>
 				<button @click="onPinNote(note.id)"> <img src="assest/icons/pin.svg" alt="pin"> </button>
 				
-				<label :data-color="note.id" for="note-bg-color"><img src="assest/icons/background-color.svg" alt="img">
-				<input @input="onSetColor($event)" :value="note.style.backgroundColor" v-show="false" id="note-bg-color"  type="color"></label>
+				<!-- <label :data-id="note.id" for="note-bg-color"><img src="assest/icons/background-color.svg" alt="img"> -->
+				<input @input="onSetColor($event,note)" :value="note.style.backgroundColor"  id="note-bg-color"  type="color"></label>
 
 
-		 		<!-- <label for="note-color"><img src="assest/icons/txt-color.svg" alt="img"></label>
-         		<input @change="onSetColor($event,note)" v-show="false" id=note-color  type="color"> -->
+		 		<!-- <label for="note-color"><img src="assest/icons/txt-color.svg" alt="img"></label> -->
+         		<input @change="onSetColor($event,note)" id=note-color  :value="note.style.color" type="color">
 
 
 				
