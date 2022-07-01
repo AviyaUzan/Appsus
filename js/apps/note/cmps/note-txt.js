@@ -4,15 +4,14 @@ export default {
        <article :style="getStyle" class="note-content flex">
 		<h3>{{note.title}}</h3>
 		<h4>{{note.info}}</h4>
-		<!-- <img :src="note.info.txt" alt=""> -->
 	</article>
 `,
-	methods: {},
 	computed: {
 		getStyle() {
 			return {
 				backgroundColor: this.note.style.backgroundColor,
-				color: this.note.style.color
+				color: this.note.style.color,
+				'padding-left': '20px'
 			}
 		}
 	}

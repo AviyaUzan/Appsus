@@ -6,3 +6,26 @@
 .note-app button {
 	all: unset;
 }
+.note-app img {
+	margin: 0;
+}
+
+.note-app button,
+.note-app label {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+}
+.note-app button:hover,
+.note-app label:hover {
+	background-color: #f1f3f4;
+}
+.note-app button img,
+.note-app label img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

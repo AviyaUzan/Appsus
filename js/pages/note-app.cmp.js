@@ -1,6 +1,7 @@
 import addNote from '../apps/note/cmps/add-note.js'
 import notePreview from '../apps/note/pages/note-preview.js'
 import { noteService } from '../apps/note/services/note-service.js'
+import { eventBus } from '../services/eventBus-service.js'
 
 export default {
 	template: `
@@ -23,11 +24,13 @@ export default {
 	},
 	data() {
 		return {
+			// unsubscribe: null,
 			notes: null
 		}
 	},
 	created() {
 		noteService.query().then(notes => (this.notes = notes))
+		// this.unsubscribe = eventBus.on('addNote', this.addNote(note))
 	},
 	methods: {
 		addNote(note) {
@@ -42,11 +45,11 @@ export default {
 			})
 		},
 		pinNote(id) {
-			noteService.pinNote(id).then(notes => {
-				console.log(notes)
-				this.notes = notes
-			})
+			noteService.pinNote(id).then(notes => (this.notes = notes))
 			// this.$router.go()
 		}
 	}
+	// unmounted() {
+	// 	this.unsubscribe()
+	// }
 }

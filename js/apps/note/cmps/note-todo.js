@@ -18,7 +18,8 @@ export default {
 		getStyle() {
 			return {
 				backgroundColor: this.note.style.backgroundColor,
-				color: this.note.style.color
+				color: this.note.style.color,
+				'padding-left': '20px'
 			}
 		}
 	},
