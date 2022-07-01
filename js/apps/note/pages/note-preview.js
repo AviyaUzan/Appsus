@@ -15,12 +15,12 @@ export default {
 				<button @click="onRemoveNote(note.id)"> <img src="assest/icons/delete.svg" alt="delete"> </button>
 				<button @click="onPinNote(note.id)"> <img src="assest/icons/pin.svg" alt="pin"> </button>
 				
-				<!-- <label :data-id="note.id" for="note-bg-color"><img src="assest/icons/background-color.svg" alt="img"> -->
-				<input @input="onSetColor($event,note)" :value="note.style.backgroundColor"  id="note-bg-color"  type="color"></label>
+				<!-- <label :data-id="note.id" for="note-bg-color"><img src="assest/icons/background-color.svg" alt="img"></label> -->
+				<input @input="onSetBgColor($event,note)" :value="note.style.backgroundColor"  id="note-bg-color"  type="color">
 
 
 		 		<!-- <label for="note-color"><img src="assest/icons/txt-color.svg" alt="img"></label> -->
-         		<input @change="onSetColor($event,note)" id=note-color  :value="note.style.color" type="color">
+         		<input @input="onSetColor($event,note)" id=note-color  :value="note.style.color" type="color">
 
 
 				
@@ -42,23 +42,18 @@ export default {
 	},
 	methods: {
 		onRemoveNote(id) {
-			console.log(id)
 			this.$emit('remove', id)
 		},
 		onPinNote(id) {
-			console.log(id)
 			this.$emit('pin', id)
 		},
-		onSetColor({ target }) {
-			console.log(target.parentNode.dataset)
-
-			// console.log(this.bgColor)
-			// { target: { value } }, note
-			// console.log('new color', value)
-			// console.log(id)
-			// console.log('curr color', note.style.backgroundColor)
-			// note.style.backgroundColor = this.style
-			// this.$emit('bgColor', note)
+		onSetBgColor({ target: { value } }, note) {
+			note.style.backgroundColor = value
+			this.$emit('colorChange', note)
+		},
+		onSetColor({ target: { value } }, note) {
+			note.style.color = value
+			this.$emit('colorChange', note)
 		}
 	},
 	computed: {}

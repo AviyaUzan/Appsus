@@ -18,8 +18,6 @@ function query(entityType) {
 
 //get an item by id
 function get(entityType, entityId) {
-	console.log(entityType, entityId)
-	query(entityType).then(entities => console.log(entities))
 	return query(entityType).then(entities =>
 		entities.find(entity => entity.id === entityId)
 	)
@@ -65,7 +63,6 @@ function putFirst(entityType, updatedEntity) {
 		const idx = entities.findIndex(entity => entity.id === updatedEntity.id)
 		entities.splice(idx, 1)
 		entities.unshift(updatedEntity)
-		console.log(entities)
 		_save(entityType, entities)
 		return entities
 	})
