@@ -3,7 +3,7 @@ export default {
 	template: `
     <article :style="getStyle" class="flex note-content">
 		<h3>{{note.title}}</h3>
-		<iframe width="210" height="157.5" :src="getIframeSrc" 
+		<iframe width="315" height="236.25" :src="getIframeSrc" 
 			frameborder="0" allowfullscreen></iframe>
 	</article>
 `,

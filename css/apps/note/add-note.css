@@ -1,12 +1,18 @@
 .add-note {
 	margin: auto;
+	box-shadow: 0 1px 2px 0 #3c40434d, 0 2px 6px 2px #3c404326;
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 2rem;
 }
 
 .add-note-input {
 	flex-direction: column;
 	width: 40rem;
 	border: 1px solid;
-	box-shadow: 0 1px 2px 0 #3c40434d, 0 2px 6px 2px #3c404326;
+	/* box-shadow: 0 1px 2px 0 #3c40434d, 0 2px 6px 2px #3c404326; */
 	border-radius: 0.5rem;
 	border: none;
 	padding: 5px;
@@ -24,10 +30,12 @@
 	padding: 0 8px;
 	border-bottom: 1px solid #e6e6e6;
 	margin-bottom: 0.5rem;
+	border-radius: 0.2rem;
 }
 .add-note-input textarea {
 	resize: none;
 	padding: 4px 10px;
+	border-radius: 0.2rem;
 }
 
 .add-note-input > * {
@@ -36,7 +44,9 @@
 }
 
 .add-note-btn-container {
-	margin-bottom: 3rem;
+	padding: 0.5rem;
+	display: flex;
+	justify-content: space-around;
 }
 .add-note-btn-container img {
 	width: 24px;

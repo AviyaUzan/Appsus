@@ -126,7 +126,7 @@ const notes = [
 		info: ' https://assets-global.website-files.com/5f3c19f18169b62a0d0bf387/60d33beacf4ba7263a23cd79_qh6ImC4NPdyPbvn-7ns8FYsgOskDPDWLnX31mLCOgSwpX_SQgmo8krqdg4e6XAnSbqRAtZMYqlf7UTvlHiXgt5YtMwbt9IRY1fAbOjyq5hARui-xEQUgI48EOjhJGuIsSFDg90L6.jpeg',
 		style: {
 			color: '#76BA99',
-			backgroundColor: '#FFDCAE'
+			backgroundColor: '#54bab9'
 		}
 	},
 	{
