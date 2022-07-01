@@ -30,7 +30,6 @@ export default {
 	},
 	created() {
 		noteService.query().then(notes => (this.notes = notes))
-		// this.unsubscribe = eventBus.on('addNote', this.addNote(note))
 	},
 	methods: {
 		addNote(note) {
@@ -50,6 +49,7 @@ export default {
 		},
 		changeBgColor(note) {
 			noteService.updateNote(note).then(notes => (this.notes = notes))
+			// this.$router.go()
 		}
 	}
 	// unmounted() {
