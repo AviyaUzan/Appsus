@@ -13,7 +13,7 @@ export default {
 		</label>
 		
 		<add-note @add-note="addNote"/>
-		<note-preview @pin="pinNote" @remove="removeNote" :notes="notes"/>
+		<note-preview @bgColor=changeBgColor @pin="pinNote" @remove="removeNote" :notes="notes"/>
 
 		</section>
 
@@ -30,7 +30,6 @@ export default {
 	},
 	created() {
 		noteService.query().then(notes => (this.notes = notes))
-		// this.unsubscribe = eventBus.on('addNote', this.addNote(note))
 	},
 	methods: {
 		addNote(note) {
@@ -46,6 +45,10 @@ export default {
 		},
 		pinNote(id) {
 			noteService.pinNote(id).then(notes => (this.notes = notes))
+			// this.$router.go()
+		},
+		changeBgColor(note) {
+			noteService.updateNote(note).then(notes => (this.notes = notes))
 			// this.$router.go()
 		}
 	}

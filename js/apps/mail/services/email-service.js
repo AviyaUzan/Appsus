@@ -1,25 +1,25 @@
-import { storageService } from '../../../services/async-storage-service.js';
-import { utilService } from '../../../services/util-service.js';
+import { storageService } from '../../../services/async-storage-service.js'
+import { utilService } from '../../../services/util-service.js'
 
-const EMAILS_KEY = 'emails';
+const EMAILS_KEY = 'emails'
 
 const criteria = {
-    status: 'inbox/sent/trash/draft',
-    txt: 'puki', // no need to support complex text search
-    isRead: true, // (optional property, if missing: show all)
-    isStared: true, // (optional property, if missing: show all)
-    lables: ['important', 'romantic'] // has any of the labels
-   }
-   
+	status: 'inbox/sent/trash/draft',
+	txt: 'puki', // no need to support complex text search
+	isRead: true, // (optional property, if missing: show all)
+	isStared: true, // (optional property, if missing: show all)
+	lables: ['important', 'romantic'] // has any of the labels
+}
 
 const loggedinUser = {
-    email: 'user@appsus.com',
-    fullname: 'Mahatma Appsus'
-   }
+	email: 'user@appsus.com',
+	fullname: 'Mahatma Appsus'
+}
 
 _creatEmails()
 
 export const emailService = {
+<<<<<<< HEAD
     getEmails,
     get,
     query,
@@ -28,22 +28,43 @@ export const emailService = {
     getPrevEmailId,
     getNextEmailId,
 };
+=======
+	getEmails,
+	get,
+	query,
+	remove,
+	save
+}
+>>>>>>> 3727e87ebc92b233f818638a247c00003889f9a1
 
 function query() {
-    return storageService.query(EMAILS_KEY)
-  }
+	return storageService.query(EMAILS_KEY)
+}
 
+<<<<<<< HEAD
    function remove(emailId) {
     return storageService.remove(EMAILS_KEY, emailId)
   }
+=======
+function remove(emailId) {
+	return storageService.remove(EMAIL_KEYS, emailId)
+}
+>>>>>>> 3727e87ebc92b233f818638a247c00003889f9a1
 
 function get(emailId) {
-    return storageService.get(EMAILS_KEY, emailId)
+	console.log(emailId)
+	console.log(storageService.get(EMAILS_KEY, emailId))
+	return storageService.get(EMAILS_KEY, emailId)
 }
 
 function save(email) {
+<<<<<<< HEAD
     if (email.id) return storageService.put(EMAILS_KEY, email)
     else return storageService.post(EMAILS_KEY, email)
+=======
+	if (email.id) return storageService.put(EMAIL_KEY, email)
+	else return storageService.post(EMAIL_KEY, email)
+>>>>>>> 3727e87ebc92b233f818638a247c00003889f9a1
 }
 
 function getPrevEmailId(emailId){
@@ -63,13 +84,13 @@ function getPrevEmailId(emailId){
   }
 
 function _creatEmails() {
-    // let emails = emailService.query().then(mails => this.mails = mails) 
-    let emails = utilService.loadFromStorage(EMAILS_KEY)
-    if (!emails || !emails.length) {
-        emails = getEmails()
-        utilService.saveToStorage(EMAILS_KEY, emails)
-    }
-    return emails;
+	// let emails = emailService.query().then(mails => this.mails = mails)
+	let emails = utilService.loadFromStorage(EMAILS_KEY)
+	if (!emails || !emails.length) {
+		emails = getEmails()
+		utilService.saveToStorage(EMAILS_KEY, emails)
+	}
+	return emails
 }
 
 function getEmails() {
@@ -256,4 +277,3 @@ function getEmails() {
         },
     ];
 }
-

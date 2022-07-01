@@ -3,7 +3,7 @@ import emailPreview from '../cmps/email-preview.cmp.js'
 
 export default {
 	name: 'email-list',
-	props: ["emails"],
+	props: ['emails'],
 	template: `
 
 	 <section class="email-app-list email-list-container">
@@ -26,36 +26,34 @@ export default {
  	</section>
   `,
 	components: {
-		emailPreview,
+		emailPreview
 		// emailDetails,
 	},
-	created(){
+	created() {
+		console.log('hi')
 	},
 	data() {
-	  return {
-		mail: null,
-		isRead: false,
-		emailShow: false,
-};
+		return {
+			mail: null,
+			isRead: false,
+			emailShow: false
+		}
 	},
 	methods: {
-	isEmailRead() {
-		
+		isEmailRead() {},
+		emailIsRead(mailId) {
+			let email = this.emails.find(email => email.id === mailId)
+			console.log('email', email)
+		}
+		//   remove(mailId) {
+		// 	this.$emit("removed", mailId);
+		//   },
+		//   select(mail) {
+		// 	this.$emit("selected", mail);
+		//   },
 	},
-	emailIsRead(mailId){
-		let email = this.emails.find((email) => email.id === mailId);
-            console.log('email',email)
-	},
-	//   remove(mailId) {
-	// 	this.$emit("removed", mailId);
-	//   },
-	//   select(mail) {
-	// 	this.$emit("selected", mail);
-	//   },
-	},
-	computed: {
-	},
-  };
+	computed: {}
+}
 
 //   <router-link class="email-preview-router" :to="'/email/'+email.id">
 // </router-link>
