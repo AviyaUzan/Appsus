@@ -3,7 +3,7 @@ import emailApp from './pages/email-app.cmp.js'
 import noteApp from './pages/note-app.cmp.js'
 import bookApp from './pages/books-app.cmp.js'
 import emailDetails from '../js/apps/mail/pages/email-details.cmp.js'
-import emailList from '../js/apps/mail/pages/email-details.cmp.js'
+import emailList from '../js/apps/mail/pages/email-list.cmp.js'
 
 
 const routes = [
@@ -21,7 +21,8 @@ const routes = [
 			},
 			{
 			  path: ":emailId",
-			  component: emailDetails
+			  component: emailDetails,
+			  props: true
 			}
 		  ],
 	},

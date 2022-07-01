@@ -2,10 +2,11 @@ import emailPreview from '../cmps/email-preview.cmp.js'
 // import emailDetails from './email-details.cmp.js'
 
 export default {
+	name: 'email-list',
 	props: ["emails"],
 	template: `
 
-	 <section class="email-list-container">
+	 <section class="email-app-list email-list-container">
 		<div v-for="(email,idx) in emails" :key="email.id">
 			<div v-if="!emailShow" @click="email.isRead = !email.isRead" :class="{read: email.isRead}" class="email-list">
 			<div class="email-actions-1">
@@ -16,8 +17,9 @@ export default {
 					 <email-preview :class="{read: email.isRead}" :email="email"/>
  				<div class="email-actions-2">
 				 <button class="email-action action-right delete-email" @click="moveToTrash(email.id)" ><img src="assest/icons/delete.svg"></button>
-				 <button class="email-action action-right" v-if="!email.isRead" >📧</button>
-				<button class="email-action action-right" v-if="email.isRead">💌</button>
+				 <!-- <button class="email-action action-right" v-if="!email.isRead" >📧</button>
+				<button class="email-action action-right" v-if="email.isRead">💌</button> -->
+				<button>{{email.isRead? '💌' : '📧'}}</button>
  				</div>
 			</div>
 		</div>
