@@ -4,7 +4,7 @@ export default {
  		<form @submit.prevent="onAddNote" class="add-note-input flex">
 			 <input v-model="title" :style="getColors" type="text"  placeholder="Title" />
 			 <input v-model="info" :style="getColors" type="text" placeholder="Enter comma separated list..." />
-			 <button type="submit">submit</button>
+			 <button class="submit-note-btn" type="submit">submit</button>
 			</form>
 `,
 	data() {

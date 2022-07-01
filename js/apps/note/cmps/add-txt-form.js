@@ -4,7 +4,7 @@ export default {
 			<form @submit.prevent="onAddNote" class="add-note-input flex">
 				<input  :style="getColors" v-model="title" type="text" placeholder="Title" />
         		<textarea :style="getColors" v-model="info" placeholder="Take a note..." rows = "3" cols = "60" name = "description"></textarea>
-				<button type="submit">submit</button>
+				<button class="submit-note-btn" type="submit">submit</button>
 			</form>
 		 <!-- make amount of rows dynamic -->
 `,
