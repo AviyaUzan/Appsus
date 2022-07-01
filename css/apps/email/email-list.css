@@ -6,15 +6,28 @@
 /* .email-action-2{
     position: relative;
 }
-
+ */
 .action-right{
     position: absolute;
-} */
+    top:27%;
+    right: 1%;
+}
 
+.delete-email{
+    position: absolute;
+    right: 3%;
+}
+
+.action-left{
+    position: absolute;
+    top:27%;
+    left: 1%;
+}
 
 .email-list {
+    position: relative;
     display: grid;
-    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-columns: 0.5fr 8fr 0.5fr;
     margin-top: 0.7%;
     margin-right: 2%;
 }

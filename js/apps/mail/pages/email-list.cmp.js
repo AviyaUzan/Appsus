@@ -10,16 +10,13 @@ export default {
 		<div v-for="(email,idx) in emails" :key="email.id">
 			<div v-if="!emailShow" @click="email.isRead = !email.isRead" :class="{read: email.isRead}" class="email-list">
 			<div class="email-actions-1">
- 					<input type="checkbox" name="" id="">
- 					<button class="btn email-action" @click="email.state = 'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="!email.isStarred" ><img class="star-icon" src="assest/icons/empty-star.png"></button>
- 					<button class="btn email-action" @click="email.state = !'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="email.isStarred" ><img class="star-icon" src="assest/icons/filled-star.png"></button>
+ 					<button class="action-left btn email-action" @click="email.state = 'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="!email.isStarred" ><img class="star-icon" src="assest/icons/empty-star.png"></button>
+ 					<button class="action-left email-action" @click="email.state = !'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="email.isStarred" ><img class="star-icon" src="assest/icons/filled-star.png"></button>
  				</div>
 					 <email-preview :class="{read: email.isRead}" :email="email"/>
  				<div class="email-actions-2">
 				 <button class="email-action action-right delete-email" @click="moveToTrash(email.id)" ><img src="assest/icons/delete.svg"></button>
-				 <!-- <button class="email-action action-right" v-if="!email.isRead" >📧</button>
-				<button class="email-action action-right" v-if="email.isRead">💌</button> -->
-				<button>{{email.isRead? '💌' : '📧'}}</button>
+				<button class="email-action action-right">{{email.isRead? '💌' : '📧'}}</button>
  				</div>
 			</div>
 		</div>
