@@ -51,3 +51,9 @@
 .add-note-btn-container img {
 	width: 24px;
 }
+
+.add-note-input .submit-note-btn {
+	border: 1px solid gray;
+	width: 67px;
+	border-radius: 0.5rem;
+}

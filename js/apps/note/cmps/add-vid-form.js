@@ -4,7 +4,7 @@ export default {
     		<form @submit.prevent="onAddNote" class="add-note-input flex">
 				<input :style="getColors" v-model="title" type="text" placeholder="Title" />
 				<input :style="getColors" v-model="info" type="text" placeholder="Enter YouTube URL..." />
-				<button type="submit">submit</button>
+				<button class="submit-note-btn" type="submit">submit</button>
 			</form>
 `,
 	data() {

@@ -4,7 +4,9 @@
 }
 
 .note-app button {
-	all: unset;
+	/* all: unset; */
+	background: none;
+	border: none;
 }
 .note-app img {
 	margin: 0;
