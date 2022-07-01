@@ -12,7 +12,7 @@ export default {
                     <!-- <router-link to="/email/all">all</router-link> |
                     <router-link to="'/email/'+email.id">email</router-link>
                     <router-link to="/about/service">Services</router-link> -->
-                    <router-view/>
+                    <router-view :emails="emailsToShow" />
                     <!-- <email-list class="email-app-list" :emails="emailsToShow"/> -->
 					<!-- <email-list/> -->
                 </div>
@@ -31,7 +31,7 @@ export default {
 	},
 	created() {
 		// const { emailId } = this.$route.params
-		// emailService.query().then(mails => (this.mails = mails))
+		// emailService.query().then(mails => this.mails = mails)
 		this.emails = emailService.getEmails()
 	},
 	methods: {
@@ -39,13 +39,14 @@ export default {
 			this.filterBy = filterBy
 			console.log('this.filterBy', this.filterBy)
 		}
+		// @selected="selectEmail"
 		// selectEmail(emailId){
 		//     this.router.push(`/email/${emailId}`)
 		// }
 	},
 	computed: {
 		emailsToShow() {
-			if (this.filterBy === 'inbox') return this.emails
+			if (this.filterBy === 'all') return this.emails
 			return this.emails.filter(email => {
 				return email.state === this.filterBy
 			})

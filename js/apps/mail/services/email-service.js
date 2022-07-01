@@ -58,7 +58,7 @@ function getEmails() {
     return [
         {
             name: 'aviya uzan',
-            id: 'e101',
+            id: storageService.makeId(),
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes',
             isRead: false,
@@ -70,7 +70,7 @@ function getEmails() {
         },
         {
             name: 'maddy pollak',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'Hello Mama',
             body: 'I love you',
             isRead: true,
@@ -82,7 +82,7 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
@@ -94,7 +94,7 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
@@ -106,7 +106,7 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
@@ -118,7 +118,7 @@ function getEmails() {
         },
         {
             name: 'aviya uzan',
-            id: 'e101',
+            id: storageService.makeId(),
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes',
             isRead: false,
@@ -130,7 +130,7 @@ function getEmails() {
         },
         {
             name: 'maddy pollak',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'Hello Mama',
             body: 'I love you',
             isRead: true,
@@ -142,7 +142,7 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
@@ -154,7 +154,7 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
@@ -166,7 +166,7 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
@@ -178,7 +178,7 @@ function getEmails() {
         },
         {
             name: 'aviya uzan',
-            id: 'e101',
+            id: storageService.makeId(),
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes',
             isRead: false,
@@ -190,7 +190,7 @@ function getEmails() {
         },
         {
             name: 'maddy pollak',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'Hello Mama',
             body: 'I love you',
             isRead: true,
@@ -202,7 +202,7 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
@@ -214,7 +214,7 @@ function getEmails() {
         },
         {
             name: 'maddy pollak',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'Hello Mama',
             body: 'I love you',
             isRead: true,
@@ -226,7 +226,7 @@ function getEmails() {
         },
         {
             name: 'roni kuchin',
-            id: 'e102',
+            id: storageService.makeId(),
             subject: 'YES QUEEN',
             body: 'lets go party',
             isRead: false,
