@@ -18,6 +18,8 @@ function query(entityType) {
 
 //get an item by id
 function get(entityType, entityId) {
+	console.log(entityType, entityId)
+	query(entityType).then(entities => console.log(entities))
 	return query(entityType).then(entities =>
 		entities.find(entity => entity.id === entityId)
 	)
