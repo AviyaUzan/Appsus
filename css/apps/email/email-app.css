@@ -95,3 +95,7 @@ span {
 	-moz-transition: ease-in-out 0.2s all;
 	-o-transition: ease-in-out 0.2s all;
 }
+.book-details .prev-next-btns {
+	width: 80px;
+	height: 50px;
+}
