@@ -11,26 +11,33 @@ export default {
 	</article>
 
 `,
+	data() {
+		return { box: null }
+	},
+
 	methods: {
 		onTitleChange({ target: { innerText } }) {
 			eventBus.emit('content-change', {
 				note: this.note,
 				txt: innerText,
-				type: 'title'
+				type: 'title',
+				box: this.box
 			})
 		},
 		onTodoChange({ target: { innerText } }, idx) {
 			eventBus.emit('todo-change', {
 				note: this.note,
 				txt: innerText,
-				idx
+				idx,
+				box: this.box
 			})
 		}
 	},
 	mounted() {
+		this.box = this.$refs.elNote.getBoundingClientRect()
 		this.$emit('setBoundingBox', {
 			note: this.note,
-			boundingBox: this.$refs.elNote.getBoundingClientRect()
+			boundingBox: this.box
 		})
 	}
 }

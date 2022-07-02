@@ -7,9 +7,14 @@ export default {
 	template: `
  		<h1>notes :)</h1>
 		<section class="note-app flex">
-		<label for="search-note">🔍
-            <input type="search"  id="search-note" v-model="filterBy.search" placeholder="Search..." >
-		</label>
+			<div class="search-note-container" >
+                <div class="note-centered">
+                     <label for="search-note">
+						<input type="search"  id="search-note" v-model="filterBy.search" class="note-textfield" required>
+						<span class="placeholder">Search Note</span>
+					</label>
+                
+            </div>
 			<select v-model="filterBy.type">
 				<option value="" selected disabled hidden>Filter By Type</option>
 				<option value="">All</option>
@@ -18,7 +23,7 @@ export default {
 				<option value="note-img">Image</option>
 				<option value="note-vid">Video</option>
 			</select>
-		
+			</div>
 		<add-note @add-note="addNote"/>
 		<note-preview @updateBoundingBox="updateNote" @duplicate="duplicateNote" @colorChange="changeColor" @pin="pinNote" @remove="removeNote" :notes="notesToShow"/>
 

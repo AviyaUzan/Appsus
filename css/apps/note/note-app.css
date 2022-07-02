@@ -3,11 +3,9 @@
 	/* align-items: center; */
 	max-width: 1020px;
 	margin: auto;
-	color: green;
 }
 
 .note-app button {
-	/* all: unset; */
 	background: none;
 	border: none;
 }
@@ -39,9 +37,12 @@
 #note-bg-color {
 	all: unset;
 	background-image: url('../../../assest/icons/background-color.svg');
-	width: 24px;
-	height: 24px;
+	width: 30px;
+	height: 30px;
+	background-size: 24px;
+	background-repeat: no-repeat;
 	background-color: transparent;
+	background-position: center;
 	align-self: center;
 }
 #note-color {
@@ -53,4 +54,58 @@
 	background-color: transparent !important;
 	/* this removes default color input style */
 	/* had to use important to override js */
+}
+#note-color:hover,
+#note-bg-color:hover {
+	background-color: #f1f3f4;
+	border-radius: 50%;
+}
+.note-centered {
+	position: relative;
+}
+
+.note-textfield {
+	position: relative;
+	padding: 10px 15px;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+	box-shadow: none;
+	width: 25em;
+	font-size: 1.5em;
+}
+.note-centered span {
+	position: absolute;
+	/* z-index: 1; */
+	background-color: #fff;
+	top: 0;
+	left: 15px;
+	color: #a9a9a9;
+	padding: 0 5px;
+}
+.note-textfield:focus {
+	border: 1px solid #959595;
+}
+input:focus ~ span,
+input:not(:focus):valid ~ span {
+	top: -26px;
+}
+.note-textfield,
+span {
+	transition: ease-in-out 0.2s all;
+	-webkit-transition: ease-in-out 0.2s all;
+	-moz-transition: ease-in-out 0.2s all;
+	-o-transition: ease-in-out 0.2s all;
+}
+.search-note-container {
+	display: flex;
+	justify-content: center;
+	padding: 2em;
+}
+
+.search-note-container select {
+	/* width: 100px; */
+	outline: 1px solid #e0e0e0;
+	border: none;
+	border-radius: 5px;
+	color: #a9a9a9;
 }

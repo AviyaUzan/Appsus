@@ -6,21 +6,27 @@ export default {
        <article ref="elNote" class="note-content txt-note flex">
 		<h3 contenteditable @input="onTitleChange" >{{note.title}}</h3>
 		<p contenteditable  @input="onInfoChange" >{{note.info}}</p>
+		<p>{{}}</p>
 	</article>
 `,
+	data() {
+		return { box: null }
+	},
 	methods: {
 		onTitleChange({ target: { innerText } }) {
 			eventBus.emit('content-change', {
 				note: this.note,
 				txt: innerText,
-				type: 'title'
+				type: 'title',
+				box: this.box
 			})
 		},
 		onInfoChange({ target: { innerText } }) {
 			eventBus.emit('content-change', {
 				note: this.note,
 				txt: innerText,
-				type: 'info'
+				type: 'info',
+				box: this.box
 			})
 		}
 	},
@@ -28,9 +34,10 @@ export default {
 		this.$emit('style', this.note.style)
 	},
 	mounted() {
-		this.$emit('setBoundingBox', {
+		this.box = this.$refs.elNote.getBoundingClientRect()
+		this.box = this.$emit('setBoundingBox', {
 			note: this.note,
-			boundingBox: this.$refs.elNote.getBoundingClientRect()
+			boundingBox: this.box
 		})
 	}
 }

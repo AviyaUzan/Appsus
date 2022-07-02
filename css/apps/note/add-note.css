@@ -47,6 +47,7 @@
 	display: flex;
 	justify-content: space-around;
 }
+
 .add-note-btn-container img {
 	width: 24px;
 }
