@@ -20,7 +20,7 @@ export default {
 			</select>
 		
 		<add-note @add-note="addNote"/>
-		<note-preview @duplicate="duplicateNote" @colorChange="changeColor" @pin="pinNote" @remove="removeNote" :notes="notesToShow"/>
+		<note-preview @updateBoundingBox="updateNote" @duplicate="duplicateNote" @colorChange="changeColor" @pin="pinNote" @remove="removeNote" :notes="notesToShow"/>
 
 		</section>
 
@@ -72,6 +72,14 @@ export default {
 			note.info[idx].txt = txt
 			note.info[idx].doneAt = null
 			noteService.updateNote(note)
+		},
+		updateNote(note) {
+			// console.log(note)
+			noteService.updateNote(note).then(notes => {
+				this.notes = notes
+				// console.log(notes)
+			})
+			// console.log(this.notes)
 		}
 	},
 	computed: {

@@ -37,6 +37,5 @@ export default {
 				'background-color': this.colors.bg
 			}
 		}
-	},
-	unmounted() {}
+	}
 }

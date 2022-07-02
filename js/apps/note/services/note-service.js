@@ -58,8 +58,10 @@ function pinNote(id) {
 }
 
 function updateNote(note) {
-	storageService.put(NOTES_KEY, note)
-	return storageService.query(NOTES_KEY)
+	console.log(note)
+	return storageService
+		.put(NOTES_KEY, note)
+		.then(() => storageService.query(NOTES_KEY))
 }
 
 function duplicateNote(id) {

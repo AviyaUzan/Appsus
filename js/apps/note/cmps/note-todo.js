@@ -2,7 +2,7 @@ import { eventBus } from '../../../services/eventBus-service.js'
 export default {
 	props: ['note'],
 	template: `
-       <article class="note-content txt-note flex">
+       <article ref="elNote" class="note-content txt-note flex">
 		<h3 contenteditable @input="onTitleChange">{{note.title}}</h3>
         <p contenteditable @input="onTodoChange($event,idx)" v-for="(todo,idx) in note.info" class="todo-container">
           {{todo.txt}} 
@@ -26,5 +26,11 @@ export default {
 				idx
 			})
 		}
+	},
+	mounted() {
+		this.$emit('setBoundingBox', {
+			note: this.note,
+			boundingBox: this.$refs.elNote.getBoundingClientRect()
+		})
 	}
 }

@@ -2,7 +2,7 @@ import { eventBus } from '../../../services/eventBus-service.js'
 export default {
 	props: ['note'],
 	template: `
-    <article class="flex img-note note-content">
+    <article ref="elNote" class="flex img-note note-content">
 		<h3 contenteditable @input="onTitleChange" >{{note.title}}</h3>
 		<img :src="note.info" alt="img">
 	</article>
@@ -15,5 +15,11 @@ export default {
 				type: 'title'
 			})
 		}
+	},
+	mounted() {
+		this.$emit('setBoundingBox', {
+			note: this.note,
+			boundingBox: this.$refs.elNote.getBoundingClientRect()
+		})
 	}
 }
