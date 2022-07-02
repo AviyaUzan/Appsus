@@ -1,9 +1,10 @@
 .email-side-nav{
-    width: 200px;
+    width: 10%;
     height: 54em;
     flex-direction: column;
     margin-left: 2%;
    gap: 3%;
+   min-width: 10em;
 }
 
 .btn-side-nave:not(:first-child){
@@ -24,6 +25,5 @@
 
 .compose-img{
     text-align: start;
-    min-width: 5em;
     cursor: pointer;
 }

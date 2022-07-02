@@ -1,7 +1,8 @@
 export default {
  template:`
  <header class="app-header">
-   <nav class="header-nav">
+ <button @click="isOpen = !isOpen" :class="{headeropen: isOpen}">☰</button>
+   <nav :class="{headeropen: isOpen}" class="header-nav">
      <router-link to="/">Home</router-link> 
      <router-link to="/email/all">Mail</router-link> 
      <router-link to="/note">note</router-link>
@@ -12,6 +13,7 @@ export default {
 `,
   data() {
     return {
+      isOpen: false
     }
   },
   methods:{},

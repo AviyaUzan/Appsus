@@ -22,20 +22,6 @@ export default {
 	{{email.body}}
 	</div>
     </section>
-
-	
-	<!-- {
-            name: 'riki mahpud',
-            id: '104',
-            subject: 'YES QUEEN',
-            body: 'lets go party',
-            isRead: false,
-            sentAt: 144555594,
-            to: 'momo@momo.com',
-            isStarred: false,
-            img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXN8ZW58MHx8MHx8&w=1000&q=80",
-            state: 'inbox',
-        }, -->
     `,
 	props:['emailId'],
 	components: {
