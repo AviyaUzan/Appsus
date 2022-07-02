@@ -28,9 +28,9 @@
      .email-preview-container{
         grid-template-columns: 1.5fr 4fr 3fr 6fr;
     }
-    /* .header-container button {
+    .search-email-container button {
         display: block;
-    } */
+    }
 
     .email-side-nav {
         position: fixed;
@@ -48,14 +48,6 @@
         box-shadow: 0 3px 6px 0 var(--clr2);
         transform: translateY(0);
     }
-    
-    /* .main-header-nav li {
-        padding: 1em;
-        width: 100%;
-        border-bottom: 3px solid #085566;
-        display: flex;
-        justify-content: flex-end;
-    } */
 }
 
 @media screen and (max-width: 645px){

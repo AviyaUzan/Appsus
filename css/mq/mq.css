@@ -7,6 +7,10 @@
 }
 @media screen and (max-width: 680px) {
 
+    .app-header button {
+        display: block;
+    }
+
     .header-nav {
         position: fixed;
         flex-direction: column;
