@@ -52,8 +52,5 @@ export default {
 			this.$emit('addNote', note)
 			// eventBus.emit('addNote', note)
 		}
-	},
-	created() {
-		console.log(this.colors.bg)
 	}
 }

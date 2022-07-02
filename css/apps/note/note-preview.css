@@ -13,7 +13,7 @@
 	border: 1px solid #e0e0e0;
 }
 .note:hover {
-	box-shadow: 0 1px 2px 0 #3c40430c, 0 2px 6px 2px #3c40430c;
+	box-shadow: 0 1px 3px 2px #3c40434d, 0 2px 6px 2px #3c40430c;
 }
 
 .note-btn-container img {
