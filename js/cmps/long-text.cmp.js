@@ -6,13 +6,13 @@ export default {
 	data() {
 		return {
 			isMore: false,
-			longText: this.text.length > 100,
+			longText: this.text.length > 40,
 		}
 	},
 	methods: {},
 	computed: {
 		formatedText() {
-			return this.isMore ? this.text : this.text.slice(0, 100)
+			return this.isMore ? this.text : this.text.slice(0, 40)
 		},
 		// readText() {
 		// 	return this.isMore ? ' Read Less' : ' Read more'

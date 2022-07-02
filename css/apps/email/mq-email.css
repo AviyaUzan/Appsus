@@ -26,8 +26,39 @@
 }
 @media screen and (max-width: 815px){
      .email-preview-container{
-        grid-template-columns: 1.5fr 4fr 3fr 6fr;
+        grid-template-columns: 1.5fr 1fr 3fr 6fr;
     }
+
+    .preview-router{
+        font-size: .8em;
+    }
+
+    .delete-email {
+        right: 6%;
+    }
+
+    .email-details{
+        margin-left:2em ;
+    }
+
+    .details-routers{
+        font-size: .7em;
+        margin-bottom: 2em;
+    }
+   
+    .email-subject{
+        margin-bottom: 1em;
+    }
+
+    .email-from{
+        margin-bottom: 1em;
+    }
+
+    .email-details{
+        width: 80%
+    }
+
+
     .search-email-container button {
         display: block;
     }
