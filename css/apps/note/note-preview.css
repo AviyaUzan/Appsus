@@ -18,6 +18,7 @@
 
 .note-btn-container img {
 	width: 24px;
+	fill: red;
 }
 .note-btn-container label {
 	display: inline-block;

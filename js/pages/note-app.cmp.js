@@ -40,7 +40,6 @@ export default {
 		}
 	},
 	created() {
-		noteService.query().then(notes => console.log(notes))
 		noteService.query().then(notes => (this.notes = notes))
 
 		eventBus.on('content-change', this.changeContent)
@@ -70,8 +69,6 @@ export default {
 			noteService.updateNote(note)
 		},
 		changeTodo({ txt, note, idx }) {
-			console.log(note)
-			console.log(idx)
 			note.info[idx].txt = txt
 			note.info[idx].doneAt = null
 			noteService.updateNote(note)
