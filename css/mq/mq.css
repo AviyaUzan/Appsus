@@ -6,16 +6,16 @@
 @media screen and (min-width: 1020px) {
 }
 @media screen and (max-width: 680px) {
-
+    
     .app-header button {
         display: block;
     }
-
+    
     .header-nav {
         position: fixed;
         flex-direction: column;
-       width: 30%;
-       bottom: 50%;
+        width: 30%;
+        bottom: 50%;
         background-color: rgb(143, 44, 44);
         font-size: 1.5em;
         transform: translateY(150%);
@@ -23,7 +23,7 @@
         opacity: 1;
         z-index: 100;
     }
-
+    
     .headeropen{
         box-shadow: 0 3px 6px 0 var(--clr2);
         transform: translateX(80%);
@@ -31,4 +31,14 @@
     .header-nav > * {
         font-size: 1.2em
     }
+    .header-logo{
+        height: 80px
+    }
 }
+
+@media screen and (max-width: 680px){
+    .app-footer{
+        margin-top: 8.2em;
+    }
+}
+
