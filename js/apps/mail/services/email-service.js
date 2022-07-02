@@ -19,13 +19,13 @@ const loggedinUser = {
 _creatEmails()
 
 export const emailService = {
-    getEmails,
     get,
     query,
     remove,
     save,
     getPrevEmailId,
     getNextEmailId,
+    createNewEmail,
 };
 
 function query() {
@@ -43,8 +43,9 @@ function get(emailId) {
 }
 
 function save(email) {
-    if (email.id) return storageService.put(EMAILS_KEY, email)
-    else return storageService.post(EMAILS_KEY, email)
+    // if (email.id) return storageService.put(EMAILS_KEY, email)
+    // else return storageService.post(EMAILS_KEY, email)
+    return storageService.post(EMAILS_KEY, email)
 }
 
 function getPrevEmailId(emailId){
@@ -63,14 +64,31 @@ function getPrevEmailId(emailId){
     })
   }
 
+  function createNewEmail(email){
+        let newEmail = {
+            name: 'me',
+            id: storageService.makeId(),
+            subject: email.subject,
+            body: email.body,
+            isRead: false,
+            sentAt: Date.now(),
+            to: email.to,
+            isStarred: false,
+            img: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=712&q=80",
+            state: 'sent',
+        }
+        return save(newEmail)
+  }
+
 function _creatEmails() {
-	// let emails = emailService.query().then(mails => this.mails = mails)
-	let emails = utilService.loadFromStorage(EMAILS_KEY)
-	if (!emails || !emails.length) {
-		emails = getEmails()
-		utilService.saveToStorage(EMAILS_KEY, emails)
-	}
-	return emails
+    let emails = query()
+    return emails.then(emails => {
+        if (!emails || !emails.length) {
+            emails = getEmails()
+            storageService.postMany(EMAILS_KEY, emails)
+        }
+        return emails
+    })
 }
 
 function getEmails() {
@@ -91,7 +109,7 @@ function getEmails() {
             name: 'maddy pollak',
             id: '102',
             subject: 'Hello Mama',
-            body: 'I love you',
+            body: 'I love you bye now',
             isRead: true,
             sentAt: 15511444334,
             to: 'momo@momo.com',
@@ -103,7 +121,7 @@ function getEmails() {
             name: 'roni kuchin',
             id: '103',
             subject: 'YES QUEEN',
-            body: 'lets go party',
+            body: 'lets go party catch up sometimes Lorem ipsum dolor sit ',
             isRead: false,
             sentAt: 14444594,
             to: 'momo@momo.com',
@@ -115,7 +133,7 @@ function getEmails() {
             name: 'riki mahpud',
             id: '104',
             subject: 'YES QUEEN',
-            body: 'lets go party',
+            body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione est odit quidem asperiores quos similique placeat iusto cupiditate quas, alias rerum iure, suscipit, facilis beatae doloremque harum. Veritatis, incidunt sit!',
             isRead: false,
             sentAt: 144555594,
             to: 'momo@momo.com',
@@ -127,7 +145,7 @@ function getEmails() {
             name: 'roni kuchin',
             id: '105',
             subject: 'YES QUEEN',
-            body: 'lets go party',
+            body: 'lets go party sometimes Lorem ipsum dolor',
             isRead: false,
             sentAt: 1446666,
             to: 'momo@momo.com',
@@ -139,7 +157,7 @@ function getEmails() {
             name: 'aviya uzan',
             id: '106',
             subject: 'Miss you!',
-            body: 'Would love to catch up sometimes',
+            body: 'Would love sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor to catch up sometimes',
             isRead: false,
             sentAt: 155550594,
             to: 'momo@momo.com',
@@ -162,8 +180,8 @@ function getEmails() {
         {
             name: 'roni kuchin',
             id: '108',
-            subject: 'YES QUEEN',
-            body: 'lets go party',
+            subject: 'Hello there',
+            body: 'lets go  sometimes Lorem ipsum dolo sometimes Lorem ipsum dolor rparty',
             isRead: false,
             sentAt: 1333394,
             to: 'momo@momo.com',
@@ -187,7 +205,7 @@ function getEmails() {
             name: 'roni kuchin',
             id: '110',
             subject: 'YES QUEEN',
-            body: 'lets go party',
+            body: 'lets go sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor party',
             isRead: false,
             sentAt: 14888894,
             to: 'momo@momo.com',
@@ -211,7 +229,7 @@ function getEmails() {
             name: 'maddy pollak',
             id: '112',
             subject: 'Hello Mama',
-            body: 'I love you',
+            body: 'sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor ',
             isRead: true,
             sentAt: 155555594,
             to: 'momo@momo.com',
@@ -223,7 +241,7 @@ function getEmails() {
             name: 'roni kuchin',
             id: '113',
             subject: 'YES QUEEN',
-            body: 'lets go party',
+            body: 'sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor',
             isRead: false,
             sentAt: 14222222,
             to: 'momo@momo.com',
@@ -235,7 +253,7 @@ function getEmails() {
             name: 'maddy pollak',
             id: '114',
             subject: 'Hello Mama',
-            body: 'I love you',
+            body: 'sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor',
             isRead: true,
             sentAt: 16664440594,
             to: 'momo@momo.com',

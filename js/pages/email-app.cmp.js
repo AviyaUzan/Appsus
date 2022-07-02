@@ -12,8 +12,8 @@ export default {
                     </div>
                 </div>
                     <div class="email-content">
-                        <email-side-nav @filter="filterByEmailState"/>
-                        <router-view :emails="emailsToShow"/>
+                        <email-side-nav @addEmail="addNewEmail" @filter="filterByEmailState"/>
+                        <router-view @removed="removeEmail" :emails="emailsToShow"/>
                 </div>
     </section>
 `,
@@ -30,8 +30,7 @@ export default {
     },
     created() {
         // const { emailId } = this.$route.params
-        // emailService.query().then(mails => this.mails = mails)
-        this.emails = emailService.getEmails();
+        emailService.query().then(emails => this.emails = emails)
     },
     methods: {
         filterByEmailState(filterBy) {
@@ -39,6 +38,16 @@ export default {
             console.log('this.filterBy', this.filterBy);
         },
         // @selected="selectEmail"
+            addNewEmail(email){
+            emailService.createNewEmail(email)
+            .then(email => this.emails.unshift(email))
+        },
+        removeEmail(emailId) {
+            emailService.remove(emailId).then(() => {
+                const idx = this.emails.findIndex((email) => email.id === emailId);
+                this.emails.splice(idx, 1);
+            })
+        },
     },
     computed: {
         emailsToShow() {
@@ -48,16 +57,4 @@ export default {
             });
         },
     },
-};
-
-{
-    /* <div class="search-email-container">
-                    <p class="centered">
-                    <label>
-                        <!-- 🔍 -->
-                        <input type="text" class="search-email textfield" required><span class="placeholder">Email</span>
-                        <!-- 🍳 -->
-                        </label>
-                        </p>
-                    </div> */
 }

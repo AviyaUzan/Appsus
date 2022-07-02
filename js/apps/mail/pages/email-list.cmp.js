@@ -15,7 +15,7 @@ export default {
  				</div>
 					 <email-preview :class="{read: email.isRead}" :email="email"/>
  				<div class="email-actions-2">
-				 <button class="email-action action-right delete-email" @click="moveToTrash(email.id)" ><img src="assest/icons/delete.svg"></button>
+				 <button class="email-action action-right delete-email" @click="removeEmail(email.id)" ><img src="assest/icons/delete.svg"></button>
 				<button class="email-action action-right">{{email.isRead? '💌' : '📧'}}</button>
  				</div>
 			</div>
@@ -41,16 +41,13 @@ export default {
 		emailIsRead(mailId) {
 			let email = this.emails.find(email => email.id === mailId)
 			console.log('email', email)
-		}
-		//   remove(mailId) {
-		// 	this.$emit("removed", mailId);
-		//   },
+		},
+		removeEmail(emailId) {
+			this.$emit("removed", emailId);
+		  },
 		//   select(mail) {
 		// 	this.$emit("selected", mail);
 		//   },
 	},
 	computed: {}
 }
-
-//   <router-link class="email-preview-router" :to="'/email/'+email.id">
-// </router-link>
