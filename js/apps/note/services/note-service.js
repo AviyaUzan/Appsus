@@ -58,7 +58,6 @@ function pinNote(id) {
 }
 
 function updateNote(note) {
-	console.log(note)
 	return storageService
 		.put(NOTES_KEY, note)
 		.then(() => storageService.query(NOTES_KEY))

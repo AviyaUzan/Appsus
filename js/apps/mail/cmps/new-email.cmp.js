@@ -1,7 +1,7 @@
-import {eventBus} from '../../../services/eventBus-service.js'
+import { eventBus } from '../../../services/eventBus-service.js'
 export default {
-    template: `
-    <form  v-if="isNewEmailShow" @submit.prevent="onAddEmail" class="new-email">
+	template: `
+    <form  v-if="isNewEmailShow" class="new-email">
                 <div class="new-email-header">
                 <p>New Message</p>
                 <button @click="isNewEmailShow = !isNewEmailShow" class="close-new-email email-action">x</button>
@@ -15,33 +15,32 @@ export default {
                     </div>
 </form>
     `,
-    	components: {
-            eventBus
-        },
-    data() {
-        return {
-            isNewEmailShow: true,
-            email: {
-                subject: '',
-                body: '',
-                isRead: false,
-                to: '',
-                isStarred: false,
-                state: 'sent',
-            }
-        }
-    },
-    mounted(){
-        this.$refs.whoToSent.focus()
-    },
-    methods: {
-        sendToDrafts(){
-            eventBus.emit('send-to-drafts', this.email)
-        },
-        onAddEmail(){
-            this.$emit("addEmail", this.email)
-        }
-    },
-    computed: {
-    },
+	components: {
+		eventBus
+	},
+	data() {
+		return {
+			isNewEmailShow: true,
+			email: {
+				subject: '',
+				body: '',
+				isRead: false,
+				to: '',
+				isStarred: false,
+				state: 'sent'
+			}
+		}
+	},
+	mounted() {
+		this.$refs.whoToSent.focus()
+	},
+	methods: {
+		sendToDrafts() {
+			eventBus.emit('send-to-drafts', this.email)
+		},
+		onAddEmail() {
+			this.$emit('addEmail', this.email)
+		}
+	},
+	computed: {}
 }

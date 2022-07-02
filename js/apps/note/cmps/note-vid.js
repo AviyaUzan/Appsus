@@ -8,6 +8,9 @@ export default {
 			frameborder="0" allowfullscreen></iframe>
 	</article>
 `,
+	data() {
+		return { box: null }
+	},
 	computed: {
 		getIframeSrc() {
 			const src = `//www.youtube.com/embed/${this.note.info}`
@@ -20,14 +23,16 @@ export default {
 			eventBus.emit('content-change', {
 				note: this.note,
 				txt: innerText,
-				type: 'title'
+				type: 'title',
+				box: this.box
 			})
 		}
 	},
 	mounted() {
-		this.$emit('setBoundingBox', {
+		this.box = this.$refs.elNote.getBoundingClientRect()
+		this.$emit('setBoundingBoxVid', {
 			note: this.note,
-			boundingBox: this.$refs.elNote.getBoundingClientRect()
+			boundingBox: this.box
 		})
 	}
 }

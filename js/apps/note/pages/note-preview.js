@@ -60,8 +60,8 @@ export default {
 			note.style.color = value
 			this.$emit('colorChange', note)
 		},
-		onDragStart() {
-			console.log('start')
+		onDragStart(ev) {
+			console.log(ev)
 		},
 		onDragEnd() {
 			// console.log('dragged')
@@ -69,15 +69,28 @@ export default {
 		onDragOver({ clientX, clientY }) {
 			// console.log(clientX, clientY)
 			const afterElement = this.getDragAfterElement(clientX, clientY)
+			console.log(afterElement)
 		},
 		onSetBoundingBox({ note, boundingBox }) {
+			// console.log(note)
 			note.boundingBox = boundingBox
 			this.$emit('updateBoundingBox', note)
 		},
 		getDragAfterElement(x, y) {
-			this.notes.forEach(note => {
-				console.log(note)
-			})
+			this.notes.reduce(
+				(closest, note) => {
+					console.log(note)
+					const box = note.boundingBox
+					// console.log(box)
+					if (!box) return
+					// const offset = y - box.top - box.height / 2
+					// if (!offset) return
+					// if (offset < 0 && offset > closest.offset) {
+					// 	return { offset, note }
+					// } else return closest
+				},
+				{ offset: -Infinity }
+			)
 		}
 	},
 	computed: {}
