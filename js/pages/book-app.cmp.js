@@ -5,7 +5,7 @@ import bookFilter from '../apps/book/cmps/book-filter.cmp.js'
 export default {
 	template: `
     <book-filter @filtered="setFilter" />
-    <book-list :books="booksToShow"  />
+    <book-list @removed="removeBook" :books="booksToShow"  />
 	`,
 	components: {
 		bookList,
@@ -23,6 +23,9 @@ export default {
 	methods: {
 		setFilter(filterBy) {
 			this.filterBy = filterBy
+		},
+		removeBook(bookId) {
+			console.log(bookId)
 		}
 	},
 	computed: {

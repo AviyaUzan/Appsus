@@ -1,19 +1,29 @@
 /*  small */
-@media screen and (min-width: 720px) {
+@media screen and (max-width: 545px) {
+	.add-note {
+		margin: 0 5px;
+		margin-bottom: 5px;
+	}
+}
+
+@media screen and (min-width: 750px) {
 	.note-preview-container {
 		max-height: 1300px;
+	}
+	.note-textfield {
+		width: 40rem;
 	}
 }
 
 /* medium */
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 1000px) {
 	.note-preview-container {
-		max-height: 1000px;
+		max-height: 1100px;
 	}
 }
 
 /* wide */
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1300px) {
 	.note-preview-container {
 		max-height: 800px;
 	}
