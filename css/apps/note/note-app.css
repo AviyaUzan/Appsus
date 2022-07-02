@@ -70,7 +70,7 @@
 	border: 1px solid #e0e0e0;
 	border-radius: 5px;
 	box-shadow: none;
-	width: 25em;
+	width: 100%;
 	font-size: 1.5em;
 }
 .note-centered span {
@@ -85,9 +85,10 @@
 .note-textfield:focus {
 	border: 1px solid #959595;
 }
-input:focus ~ span,
-input:not(:focus):valid ~ span {
-	top: -26px;
+
+.search-note-container input:focus ~ span,
+.search-note-container input:not(:focus):valid ~ span {
+	top: -20px;
 }
 .note-textfield,
 span {

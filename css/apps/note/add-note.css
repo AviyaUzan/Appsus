@@ -6,11 +6,12 @@
 	flex-direction: column;
 	justify-content: space-between;
 	margin-bottom: 2rem;
+	max-width: 40rem;
+	margin: clamp(5px, auto, auto);
 }
 
 .add-note-input {
 	flex-direction: column;
-	width: 40rem;
 	border: 1px solid;
 	border-radius: 0.5rem;
 	border: none;

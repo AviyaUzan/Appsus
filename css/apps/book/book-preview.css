@@ -1,12 +1,3 @@
-@font-face {
-	font-family: Roboto;
-	src: url(./../assets/fonts/Roboto-Regular.ttf);
-}
-@font-face {
-	font-family: Rosmatika;
-	src: url(./../assets/fonts/RosmatikaRegular-BWA45.ttf);
-}
-
 .book-list p {
 	margin: 0;
 }
@@ -26,12 +17,13 @@
 	list-style-type: none;
 	gap: 15px;
 	flex-wrap: wrap;
-	justify-content: left;
+	/* justify-content: left; */
+	justify-content: center;
 	padding-inline-start: 0;
 	width: 100%;
 }
 .book-list li {
-	background-color: #c5ddf3;
+	background-color: #e6eded;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -56,7 +48,7 @@
 }
 
 .book-btn {
-	font-family: Roboto, 'Helvetica Neue';
+	font-family: Roboto-Regular, 'Helvetica Neue';
 	font-weight: 600;
 	display: flex;
 	flex-direction: column;
@@ -79,13 +71,13 @@
 
 .book-details {
 	display: grid;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
 	font-size: 1.2rem;
 	max-width: 900px;
 	margin: auto;
-	background-color: #c5ddf3;
-	padding: 0 80px 80px 80px;
+	background-color: #e6eded;
+	padding: 30px;
 	border-radius: 1rem;
 }
 .book-details .title-container {
@@ -97,6 +89,7 @@
 }
 .book-details .img-container {
 	grid-row: 2/6;
+	grid-column: 1;
 	margin-right: 40px;
 }
 .book-details img {
@@ -114,6 +107,27 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+}
+.book-details .next-btn,
+.book-details .prev-btn {
+	width: 80px;
+	height: 50px;
+}
+
+.book-details .next-btn {
+	grid-row: 5;
+	grid-column: 1;
+}
+.book-details .prev-btn {
+	grid-row: 5;
+	grid-column: 2;
+	justify-self: end;
+}
+.book-details .back-btn {
+	grid-row: 1;
+	grid-column: 2;
+	place-self: start end;
+	margin: 10px;
 }
 
 .book-details a {
@@ -208,14 +222,20 @@
 	margin-bottom: 1rem;
 }
 .book-filter {
-	margin-top: 10px;
+	margin: 10px auto;
+	display: flex;
+	/* flex-direction: column; */
+	/* max-width: 200px; */
+	align-items: center;
+	justify-content: space-around;
 }
 .add-book-container {
+	height: 71.5vh;
 	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	justify-content: center;
+	/* justify-content: center; */
 	align-items: center;
 	font-size: 1.5rem;
 }
@@ -254,4 +274,7 @@
 	to {
 		transform: rotate(-20deg) scale(1.1);
 	}
+}
+.add-book-btn {
+	width: 100px;
 }

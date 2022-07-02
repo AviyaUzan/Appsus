@@ -5,7 +5,6 @@ import { eventBus } from '../services/eventBus-service.js'
 
 export default {
 	template: `
- 		<h1>notes :)</h1>
 		<section class="note-app flex">
 			<div class="search-note-container" >
                 <div class="note-centered">

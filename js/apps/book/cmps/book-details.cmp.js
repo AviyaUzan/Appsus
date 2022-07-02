@@ -26,9 +26,9 @@ export default {
             <p>Publish Date: {{book.publishedDate}} <span>{{bookAge}}</span></p>
 			<p :class="currencyStyle">Price: {{getCurrency}}</p>
         </div>
-		<router-link class="book-btn" :to="'/book'">Back</router-link>
-		<router-link class="book-btn prev-next-btns" @click="prevPage" :to="'/book/' + prevBookId">Previous Book</@>
-		<router-link class="book-btn prev-next-btns" :to="'/book/' + nextBookId">Next Book</router-link>
+		<router-link class="book-btn back-btn" :to="'/book'">Back</router-link>
+		<router-link class="book-btn prev-btn" :to="'/book/' + prevBookId">Previous Book</router-link>
+		<router-link class="book-btn next-btn" :to="'/book/' + nextBookId">Next Book</router-link>
     </section>
 	<add-review @add-review="addReview" @remove-review="removeReview" :book="book"/>
 	`,
