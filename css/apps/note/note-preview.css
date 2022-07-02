@@ -3,7 +3,7 @@
 	align-content: center;
 	flex-direction: column;
 	flex-wrap: wrap;
-	max-height: 800px;
+	/* max-height: 800px; */
 	gap: 1rem;
 }
 

@@ -1,11 +1,18 @@
-/* small */
+/*  small */
 @media screen and (min-width: 720px) {
 	.note-preview-container {
-		max-height: 800px;
+		max-height: 1300px;
 	}
 }
 
-/* WIDE */
+/* medium */
+@media screen and (min-width: 860px) {
+	.note-preview-container {
+		max-height: 1000px;
+	}
+}
+
+/* wide */
 @media screen and (min-width: 1020px) {
 	.note-preview-container {
 		max-height: 800px;

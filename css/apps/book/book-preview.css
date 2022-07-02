@@ -211,11 +211,12 @@
 	margin-top: 10px;
 }
 .add-book-container {
+	height: 71.5vh;
 	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	justify-content: center;
+	/* justify-content: center; */
 	align-items: center;
 	font-size: 1.5rem;
 }
