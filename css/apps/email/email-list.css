@@ -1,45 +1,51 @@
-.read{
-    background-color: rgb(233, 227, 227);
-    color: rgb(124, 123, 123);
+.read {
+	background-color: rgb(233, 227, 227);
+	color: rgb(124, 123, 123);
 }
 
 /* .email-action-2{
     position: relative;
 }
  */
-.action-right{
-    position: absolute;
-    top:27%;
-    right: 1%;
+.action-right {
+	position: absolute;
+	top: 27%;
+	right: 1%;
 }
 
-.delete-email{
-    position: absolute;
-    right: 3%;
+.delete-email {
+	position: absolute;
+	right: 3%;
 }
 
-.action-left{
-    position: absolute;
-    top:27%;
-    left: 1%;
+.action-left {
+	position: absolute;
+	top: 27%;
+	left: 1%;
 }
 
 .email-list {
-    position: relative;
-    display: grid;
-    grid-template-columns: 0.5fr 8fr 0.5fr;
-    margin-top: 0.7%;
-    margin-right: 2%;
+	position: relative;
+	display: grid;
+	grid-template-columns: 0.5fr 8fr 0.5fr;
+	margin-top: 0.7%;
+	margin-right: 2%;
 }
 
 .star-icon {
-    height: 20px;
+	height: 20px;
 }
 
-.email-action{
-    appearance: none;
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    overflow: hidden;
+.email-action {
+	appearance: none;
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border: none;
+	overflow: hidden;
+}
+
+.add-book-link {
+	text-decoration: none;
+	color: #97d5da;
+	font-size: 1.2rem;
 }
