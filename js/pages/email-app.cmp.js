@@ -7,13 +7,14 @@ import { eventBus } from '../services/eventBus-service.js'
 export default {
 	template: `
     <section class="email-app">
-                <div class="search-note-container" >
+                <div class="search-email-container" >
+                    <button hidden @click="isOpen = !isOpen" :class="{open: isOpen}">☰</button>
                     <div class="centered">
                         <label><input v-model="search" type="text" class="textfield" required><span class="placeholder">Search Email</span></label>
                     </div>
                 </div>
                     <div class="email-content">
-                        <email-side-nav @addEmail="addNewEmail" @filter="filterByEmailState"/>
+                        <email-side-nav :class="{open: isOpen}" class="email-side-nav" @addEmail="addNewEmail" @filter="filterByEmailState"/>
                         <router-view @removed="removeEmail" :emails="emailsToShow"/>
                 </div>
     </section>
@@ -27,7 +28,8 @@ export default {
 		return {
 			emails: null,
 			filterBy: 'all',
-			search: ''
+			search: '',
+            isOpen: false
 		}
 	},
 	created() {
