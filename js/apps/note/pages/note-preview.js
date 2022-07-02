@@ -7,9 +7,10 @@ import noteAudio from '../cmps/note-audio.js'
 export default {
 	props: ['notes'],
 	template: `
-	<section class="note-preview-container flex">
+	<section  class="note-preview-container flex">
 		<div class="note" v-for="note in notes" >
-			<component :style="note.style" :is="note.type" :note='note'></component>
+			<component @dragover.prevent="onDragOver" @dragend.prevent="onDragEnd" @dragstart="onDragStart"
+			 draggable="true" :style="note.style" :is="note.type" :note='note' @setBoundingBox="onSetBoundingBox"></component>
 			<div  :style="note.style" class="flex note-btn-container">
 				
 				<button @click="onRemoveNote(note.id)"> <img src="assest/icons/delete.svg" alt="delete"> </button>
@@ -58,7 +59,34 @@ export default {
 		onSetColor({ target: { value } }, note) {
 			note.style.color = value
 			this.$emit('colorChange', note)
+		},
+		onDragStart() {
+			console.log('start')
+		},
+		onDragEnd() {
+			// console.log('dragged')
+		},
+		onDragOver({ clientX, clientY }) {
+			// console.log(clientX, clientY)
+			const afterElement = this.getDragAfterElement(clientX, clientY)
+		},
+		onSetBoundingBox({ note, boundingBox }) {
+			note.boundingBox = boundingBox
+			this.$emit('updateBoundingBox', note)
+		},
+		getDragAfterElement(x, y) {
+			this.notes.forEach(note => {
+				console.log(note)
+			})
 		}
 	},
 	computed: {}
 }
+
+// 		const offset = y - note.boundingBox.top - note.boundingBox.height / 2
+// 		console.log(offset)
+// if (offset < 0 && offset > closest.offset) {
+// 	return { offset: offset, element: child }
+// } else {
+// 	return note
+// }
