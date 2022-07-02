@@ -1,9 +1,8 @@
 .email-side-nav{
-    width: 10%;
+    width: 200px;
     height: 54em;
     flex-direction: column;
     margin-left: 2%;
-    /* background-color: rgb(221, 147, 51); */
    gap: 3%;
 }
 

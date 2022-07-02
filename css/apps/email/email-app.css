@@ -24,7 +24,7 @@ flex-direction: column;
     border:none;
 }
  .centered {
-    position: fixed;
+    position: relative;
   }
   
   .textfield {

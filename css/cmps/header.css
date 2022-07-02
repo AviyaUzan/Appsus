@@ -1,0 +1,32 @@
+.app-header{
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:
+     linear-gradient(315deg, transparent 75%, #ffffff 0)-10px 0,
+    linear-gradient(45deg, transparent 75%, #ffffff 0)-10px 0,
+    linear-gradient(135deg, #c5ddf3 50%, transparent 0) 0 0,
+    linear-gradient(45deg, #b6ebf5 50%, #97d5da 0) 0 0;
+    transform: rotate(180deg);
+    background-size: 150px 150px;
+}
+
+.header-logo{
+    height: 150px;
+    padding-left: 2.5em;
+    transform: rotate(180deg);
+}
+
+.header-nav{
+    transform: rotate(180deg);
+    padding-right: 2.5em;
+    display: flex;
+    gap: 4em;
+    /* font-size: 1.6em; */
+}
+
+.header-nav > * {
+    text-decoration: none;
+    font-size: 1.6em
+}

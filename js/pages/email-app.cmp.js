@@ -2,13 +2,14 @@ import { emailService } from '../apps/mail/services/email-service.js';
 import emailList from '../apps/mail/pages/email-list.cmp.js';
 import emailDetails from '../apps/mail/pages/email-details.cmp.js';
 import emailSideNav from '../apps/mail/cmps/email-side-nav.cmp.js';
+import { eventBus } from '../services/eventBus-service.js';
 
 export default {
     template: `
     <section class="email-app">
                 <div class="search-email-container" >
                     <div class="centered">
-                        <label><input type="text" class="textfield" required><span class="placeholder">Search Email</span></label>
+                        <label><input v-model="search" type="text" class="textfield" required><span class="placeholder">Search Email</span></label>
                     </div>
                 </div>
                     <div class="email-content">
@@ -25,14 +26,19 @@ export default {
     data() {
         return {
             emails: null,
-            filterBy: 'all',
+            filterBy:'all',
+            search: '',
         };
     },
     created() {
         // const { emailId } = this.$route.params
         emailService.query().then(emails => this.emails = emails)
+        eventBus.on('send-to-email',this.sendToDrafts)
     },
     methods: {
+        sendToDrafts(email){
+            console.log('email',email)
+        },
         filterByEmailState(filterBy) {
             this.filterBy = filterBy;
             console.log('this.filterBy', this.filterBy);
@@ -49,8 +55,15 @@ export default {
             })
         },
     },
+
     computed: {
         emailsToShow() {
+            if(this.search) {
+                const regex = new RegExp(this.search, 'i')
+                return this.emails.filter(
+                 email => regex.test(email.body) || regex.test(email.name) || regex.test(email.subject)
+                )
+            }
             if (this.filterBy === 'all') return this.emails;
             return this.emails.filter((email) => {
                 return email.state === this.filterBy;

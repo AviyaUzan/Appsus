@@ -1,7 +1,13 @@
 export default {
  template:`
  <header class="app-header">
-    HEADER
+   <nav class="header-nav">
+     <router-link to="/">Home</router-link> 
+     <router-link to="/email/all">Mail</router-link> 
+     <router-link to="/note">note</router-link>
+     <router-link to="/book">book</router-link>
+    </nav>
+    <div><img class="header-logo" src="assest/icons/header-logo.png"></div>
  </header>
 `,
   data() {
