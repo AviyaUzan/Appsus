@@ -1,9 +1,12 @@
 export default {
 	template: `
- <section class="main-layout book-filter">
- 	<label for="title"> Title:
-    	<input id="title" type="text" v-model="filterBy.title" @change="filter('title')">
-	</label>
+ <section class="main-layout book-filter search-book-container">
+                <div class="book-centered">
+                     <label for="search-book">
+						<input type="search"  id="search-book" v-model="filterBy.title" @input="filter('title')" class="book-textfield" required>
+						<span class="placeholder">Search book</span>
+					</label>
+          		</div>
 	<label for="price"> Price: 
     	<input id="price" type="range" v-model="filterBy.price" min="0" max="200" @change="filter('price')" >
 	</label>
@@ -20,6 +23,7 @@ export default {
 	},
 	methods: {
 		filter(filter) {
+			console.log(filter)
 			this.$emit('filtered', this.filterBy)
 		}
 	},

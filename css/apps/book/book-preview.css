@@ -278,3 +278,45 @@
 .add-book-btn {
 	width: 100px;
 }
+.book-centered {
+	position: relative;
+}
+
+.book-textfield {
+	position: relative;
+	padding: 10px 15px;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+	box-shadow: none;
+	width: 100%;
+	font-size: 1.5em;
+}
+.book-centered span {
+	position: absolute;
+	/* z-index: 1; */
+	background-color: #fff;
+	top: 15px;
+	left: 15px;
+	color: #a9a9a9;
+	padding: 0 5px;
+}
+.book-textfield:focus {
+	border: 1px solid #959595;
+}
+
+.search-book-container input:focus ~ span,
+.search-book-container input:not(:focus):valid ~ span {
+	top: -8px;
+}
+.book-textfield,
+span {
+	transition: ease-in-out 0.2s all;
+	-webkit-transition: ease-in-out 0.2s all;
+	-moz-transition: ease-in-out 0.2s all;
+	-o-transition: ease-in-out 0.2s all;
+}
+.search-book-container {
+	display: flex;
+	justify-content: center;
+	padding: 2em;
+}
