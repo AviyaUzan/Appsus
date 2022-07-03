@@ -157,7 +157,7 @@ const notes = [
 		],
 		style: {
 			color: '#1E2019',
-			backgroundColor: '#E2C044'
+			backgroundColor: '#D3C0D2'
 		}
 	},
 	{
