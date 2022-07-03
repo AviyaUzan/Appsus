@@ -29,3 +29,9 @@
 	font-size: 1.6em;
 	color: black;
 }
+.header-nav > *:hover {
+	color: rgb(62, 144, 156);
+}
+.header-nav > *:active {
+	color: blue;
+}

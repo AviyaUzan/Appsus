@@ -12,7 +12,6 @@ export default {
 						<input type="search"  id="search-note" v-model="filterBy.search" class="note-textfield" required>
 						<span class="placeholder">Search Note</span>
 					</label>
-                
             </div>
 			<select v-model="filterBy.type">
 				<option value="" selected disabled hidden>Filter By Type</option>
