@@ -135,8 +135,9 @@ function getNextBookId(bookId) {
 }
 
 function getPrevBookId(bookId) {
-	return storageService.query(BOOKS_KEY).then(books => {
-		const idx = books.findIndex(book => book.id === bookId)
-		return idx >= 0 ? books[idx - 1].id : books[books.length - 1].id
-	})
+	if (!bookId)
+		return storageService.query(BOOKS_KEY).then(books => {
+			const idx = books.findIndex(book => book.id === bookId)
+			return idx >= 0 ? books[idx - 1].id : books[books.length - 1].id
+		})
 }
