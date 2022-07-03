@@ -146,3 +146,7 @@ span {
 	-moz-transition: ease-in-out 0.2s all;
 	-o-transition: ease-in-out 0.2s all;
 }
+
+.email-burger{
+  font-size: 2em;
+}

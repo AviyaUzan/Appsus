@@ -8,7 +8,7 @@ export default {
 	template: `
     <section class="email-app">
                 <div class="search-email-container" >
-                    <button hidden @click="isOpen = !isOpen" :class="{open: isOpen}">☰</button>
+                    <button class="email-action email-burger" hidden @click="isOpen = !isOpen" :class="{open: isOpen}">☰</button>
                     <div class="centered">
                         <label><input v-model="search" type="text" class="textfield" required><span class="placeholder">Search Email</span></label>
                     </div>

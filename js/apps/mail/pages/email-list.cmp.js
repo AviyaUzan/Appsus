@@ -7,7 +7,7 @@ export default {
 	template: `
 
 	 <section class="email-app-list email-list-container">
-		<div v-for="(email,idx) in emails" :key="email.id">
+		<div class="email-list-hover" v-for="(email,idx) in emails" :key="email.id">
 			<div v-if="!emailShow" @click="email.isRead = !email.isRead" :class="{read: email.isRead}" class="email-list">
 			<div class="email-actions-1">
  					<button class="action-left btn email-action" @click="email.state = 'starred'" @click.stop="email.isStarred = !email.isStarred" v-if="!email.isStarred" ><img class="star-icon" src="assest/icons/empty-star.png"></button>
