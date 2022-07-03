@@ -20,6 +20,11 @@
 	left: 1%;
 }
 
+.action-right:hover , .action-left:hover , .delete-email:hover{
+	background-color: #f1f3f4;
+	border-radius: 50%;
+}
+
 .email-list {
 	position: relative;
 	display: grid;

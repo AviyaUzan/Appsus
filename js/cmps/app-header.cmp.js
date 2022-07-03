@@ -1,8 +1,9 @@
 export default {
 	template: `
  <header class="app-header">
- <button hidden @click="isOpen = !isOpen" class="email-action" :class="{headeropen: isOpen}">☰</button>
-   <nav :class="{headeropen: isOpen}" class="header-nav">
+ <!-- <button hidden @click="isOpen = !isOpen" class="email-action header-burger" :class="{headeropen: isOpen}">☰</button> -->
+   <!-- <nav :class="{headeropen: isOpen}" class="header-nav"> -->
+   <nav class="header-nav" >
      <router-link to="/">Home</router-link> 
      <router-link to="/email/all">Mail</router-link> 
      <router-link to="/note">note</router-link>
@@ -13,7 +14,7 @@ export default {
 `,
 	data() {
 		return {
-			isOpen: false
+			// isOpen: false
 		}
 	},
 	methods: {},

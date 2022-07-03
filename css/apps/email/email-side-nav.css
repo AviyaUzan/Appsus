@@ -18,6 +18,10 @@
     font-size: 1.1em;
 }
 
+.btn-side-nave:hover{
+    background-color: #f1f3f4;
+}
+
 .compose {
     width: 100%;
     padding: 0;

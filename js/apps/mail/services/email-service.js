@@ -94,7 +94,7 @@ function _creatEmails() {
 function getEmails() {
     return [
         {
-            name: 'aviya uzan',
+            name: 'Liz Dor',
             id: '101',
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione est odit quidem asperiores quos similique placeat iusto cupiditate quas, alias rerum iure, suscipit, facilis beatae doloremque harum. Veritatis, incidunt sit!',
@@ -106,7 +106,7 @@ function getEmails() {
             state: 'trash',
         },
         {
-            name: 'maddy pollak',
+            name: 'Maddy Pollak',
             id: '102',
             subject: 'Hello Mama',
             body: 'I love you bye now',
@@ -118,7 +118,7 @@ function getEmails() {
             state: 'inbox',
         },
         {
-            name: 'roni kuchin',
+            name: 'Roni Kuchin',
             id: '103',
             subject: 'YES QUEEN',
             body: 'lets go party catch up sometimes Lorem ipsum dolor sit ',
@@ -130,21 +130,21 @@ function getEmails() {
             state: 'inbox',
         },
         {
-            name: 'riki mahpud',
+            name: 'Riki Tov',
             id: '104',
-            subject: 'YES QUEEN',
+            subject: 'Say more',
             body: 'Would love to catch up sometimes Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione est odit quidem asperiores quos similique placeat iusto cupiditate quas, alias rerum iure, suscipit, facilis beatae doloremque harum. Veritatis, incidunt sit!',
             isRead: false,
             sentAt: 144555594,
             to: 'momo@momo.com',
             isStarred: false,
-            img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXN8ZW58MHx8MHx8&w=1000&q=80",
+            img: "https://medias.timeout.co.il/www/uploads/2018/09/lior_lachman-by-%D7%A0%D7%98%D7%9C%D7%99-%D7%98%D7%9C_t-600x600.jpg",
             state: 'inbox',
         },
         {
-            name: 'roni kuchin',
+            name: 'Ben David',
             id: '105',
-            subject: 'YES QUEEN',
+            subject: 'Hello you',
             body: 'lets go party sometimes Lorem ipsum dolor',
             isRead: false,
             sentAt: 1446666,
@@ -154,7 +154,7 @@ function getEmails() {
             state: 'inbox',
         },
         {
-            name: 'aviya uzan',
+            name: 'Maya El',
             id: '106',
             subject: 'Miss you!',
             body: 'Would love sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor sometimes Lorem ipsum dolor to catch up sometimes',
@@ -166,7 +166,7 @@ function getEmails() {
             state: 'trash',
         },
         {
-            name: 'maddy pollak',
+            name: 'Rotem Levi',
             id: '107',
             subject: 'Hello Mama',
             body: 'I love you',
@@ -178,7 +178,7 @@ function getEmails() {
             state: 'inbox',
         },
         {
-            name: 'roni kuchin',
+            name: 'Tobi Maoz',
             id: '108',
             subject: 'Hello there',
             body: 'lets go  sometimes Lorem ipsum dolo sometimes Lorem ipsum dolor rparty',
@@ -198,7 +198,7 @@ function getEmails() {
             sentAt: 166594,
             to: 'momo@momo.com',
             isStarred: false,
-            img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXN8ZW58MHx8MHx8&w=1000&q=80",
+            img: "https://medias.timeout.co.il/www/uploads/2018/09/lior_lachman-by-%D7%A0%D7%98%D7%9C%D7%99-%D7%98%D7%9C_t-600x600.jpg",
             state: 'inbox',
         },
         {
