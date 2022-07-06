@@ -6,11 +6,11 @@ export default {
                 <p>New Message</p>
                 <button @click="isNewEmailShow = !isNewEmailShow" class="close-new-email email-action">x</button>
             </div>
-                    <input v-model="email.to" ref="whoToSent" class="new-email-to" type="email" required placeholder="To">
+                    <input v-model="email.to" ref="whoToSent" class="new-email-to" type="email" placeholder="To" required>
                     <input v-model="email.subject" class="new-email-title" type="text" placeholder="Subject">
                     <textarea :keyup.enter="onAddEmail" v-model="email.body" class="new-email-text" name="" id="" rows="10"></textarea>
                     <div class="new-email-btns">
-                        <button @click="closeEmail" type="submit" class="send email-action" ><img src="assest/icons/send.svg"></button>
+                        <button required @click="closeEmail" type="submit" class="send email-action" ><img src="assest/icons/send.svg"></button>
                         <button @click="isNewEmailShow = !isNewEmailShow" @click.stop="sendToDrafts" class="email-action" ><img src="assest/icons/delete.svg" alt=""></button>
                     </div>
 </form>
@@ -36,6 +36,8 @@ export default {
 	},
 	methods: {
 		closeEmail(){
+			var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+			if(!this.email.to.match(mailformat)) return
 			setTimeout(()=>
 			this.isNewEmailShow = false),100
 		},

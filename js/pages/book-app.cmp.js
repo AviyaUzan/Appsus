@@ -25,7 +25,11 @@ export default {
 			this.filterBy = filterBy
 		},
 		removeBook(bookId) {
-			console.log(bookId)
+			bookService.remove(bookId).then(() => {
+                console.log('Deleted successfully');
+                const idx = this.books.findIndex((book) => book.id === bookId);
+                this.books.splice(idx, 1);
+            })
 		}
 	},
 	computed: {
