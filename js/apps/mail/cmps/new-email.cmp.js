@@ -10,7 +10,7 @@ export default {
                     <input v-model="email.subject" class="new-email-title" type="text" placeholder="Subject">
                     <textarea :keyup.enter="onAddEmail" v-model="email.body" class="new-email-text" name="" id="" rows="10"></textarea>
                     <div class="new-email-btns">
-                        <button required @click="closeEmail" type="submit" class="send email-action" ><img src="assest/icons/send.svg"></button>
+                        <button required @click="closeEmail" type="submit" class="send email-action" ><img class="send-btn" src="assest/icons/send.svg"></button>
                         <button @click="isNewEmailShow = !isNewEmailShow" @click.stop="sendToDrafts" class="email-action" ><img src="assest/icons/delete.svg" alt=""></button>
                     </div>
 </form>
