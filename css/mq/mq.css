@@ -46,6 +46,10 @@
 		height: 80px;
 		width: 120px;
 	} 
+	.new-email-btns{
+        margin-bottom: 15%;
+		border-bottom: 1px solid black;
+    }
 }
 
 @media screen and (max-width: 680px) {
